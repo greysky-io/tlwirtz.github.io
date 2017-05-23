@@ -24,10 +24,9 @@ h1 {
 .app-container-item {
   flex: auto;
   min-width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-/*need to center items vertically in the container*/
 .section-container {
   display: flex;
   min-width: 60%;
@@ -36,15 +35,21 @@ h1 {
   align-content: center;
   padding: 2em;
   margin: auto;
+  flex-flow: column;
 }
 
 .top {
+  width: 5em;
+  height: 5em;
   align-self: flex-start;
 }
 
 .bottom {
+  width: 5em;
+  height: 5em;
   align-self: flex-end;
 }
+
 
 .section-item {
   flex: auto;
