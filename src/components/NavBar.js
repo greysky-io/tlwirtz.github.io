@@ -10,14 +10,14 @@ const NavBar = props => {
         <img src={gssLogo} alt="greysky studios logo" />
       </div>
       <div className="app-nav-group">
-        <div className="app-nav-group-item">
-          <h2 className="text-headline text-white text-hairline">services</h2>
+        <div className="app-nav-group item">
+          <h2 className="center text-subheading text-white text-hairline">services</h2>
         </div>
-        <div className="app-nav-group-item">
-          <h2 className="text-headline text-white text-hairline">about</h2>
+        <div className="app-nav-group item">
+          <h2 className="center text-subheading text-white text-hairline">about</h2>
         </div>
-        <div className="app-nav-group-item">
-          <h2 className="text-headline text-white text-hairline">
+        <div className="app-nav-group item">
+          <h2 className="center text-subheading text-white text-hairline">
             get in touch
           </h2>
         </div>

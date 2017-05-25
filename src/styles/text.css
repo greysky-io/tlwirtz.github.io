@@ -8,8 +8,22 @@
 .text-headline {
   font-family: Lato;
   letter-spacing: 0;
+  line-height: 44px;
+  font-size: 36px;
+}
+
+.text-subheading {
+  font-family: Lato;
+  letter-spacing: 0;
   line-height: 27px;
   font-size: 24px;
+}
+
+.text-body {
+  font-family: Lato;
+  letter-spacing: 0;
+  line-height: 24px;
+  font-size: 20px
 }
 
 .text-regular {
@@ -26,4 +40,8 @@
 
 .text-white {
   color: #FFFBFE;
+}
+
+.text-dark {
+  color: #4A4A4A;
 }
