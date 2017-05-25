@@ -53,6 +53,13 @@ hr {
   flex-flow: column;
 }
 
+.section-full-width {
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+  max-width: 100%;
+}
+
 .top {
   width: 5em;
   height: 5em;
@@ -96,6 +103,20 @@ hr {
 
 .main-background {
   background-image: linear-gradient(-135deg, #8600C6 0%, #6B00FF 100%);
+}
+
+.blue-background {
+  background-image: linear-gradient(45deg, #0016FF 0%, #00A7FF 100%);
+}
+
+.full-width-img {
+  width: 100%;
+  min-height: 50vh;
+}
+
+.shopify-logo {
+  margin-top: 2.25em;
+  margin-bottom: 2.25em;
 }
 
 /* Regular smart phones, including iPhone 6 + with 414px viewport! */
