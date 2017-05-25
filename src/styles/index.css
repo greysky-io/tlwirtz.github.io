@@ -17,14 +17,6 @@ hr {
   width: 35%;
 }
 
-.center {
-  text-align: center;
-}
-
-.left {
-  text-align: left;
-}
-
 .app-container {
   width: 100%;
   align-items: center;
@@ -71,7 +63,6 @@ hr {
   height: 5em;
   align-self: flex-end;
 }
-
 
 .section-item {
   flex: auto;

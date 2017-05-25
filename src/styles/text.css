@@ -45,3 +45,11 @@
 .text-dark {
   color: #4A4A4A;
 }
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
