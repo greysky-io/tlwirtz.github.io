@@ -1,0 +1,14 @@
+.primary-button {
+  background: #6500FF;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  padding: 0.5em;
+  min-width: 150px;
+  align-items: center;
+}
+
+.primary-button > p {
+  margin: 0;
+  flex: auto;
+  align-self: center;
+}
