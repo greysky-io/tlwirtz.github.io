@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/Button.css'
+import '../styles/Button.css';
 
-const Button = ({onClick = (e) => null, ...props}) => {
+const Button = ({ onClick = e => null, ...props }) => {
   return (
     <div onClick={e => onClick(e)} className="primary-button info-card-item">
       {props.children}
@@ -10,8 +10,6 @@ const Button = ({onClick = (e) => null, ...props}) => {
   );
 };
 
-Button.propTypes = {
-  
-};
+Button.propTypes = {};
 
 export default Button;
