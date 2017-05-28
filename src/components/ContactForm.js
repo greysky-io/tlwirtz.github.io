@@ -11,15 +11,22 @@ class ContactForm extends Component {
       lastName: '',
       email: '',
       company: '',
-      projectType: '',
+      projectType: 'Store Setup',
       budget: '',
       projectDetails: '',
     };
     this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    console.log('this is where the form would be submitted"')
   }
 
   render() {
@@ -34,7 +41,7 @@ class ContactForm extends Component {
                 type="text"
                 name="firstName"
                 value={this.state.firstName}
-                onChange={(e => this.onChange(e))}
+                onChange={e => this.onChange(e)}
               />
             </div>
             <div className="form-item">
@@ -73,13 +80,17 @@ class ContactForm extends Component {
           <div className="form-container">
             <div className="form-item">
               <p className="text-body text-dark text-hairline">Project Type</p>
-              <input
+              <select
                 id="project-type"
                 name="projectType"
                 value={this.state.projectType}
                 onChange={e => this.onChange(e)}
                 type="text"
-              />
+              >
+                <option id="store-setup">Store Setup</option>
+                <option id="app-setup">App Integration</option>
+                <option id="custom-app">Custom App Development</option>
+              </select>
             </div>
             <div className="form-item">
               <p className="text-body text-dark text-hairline">Budget</p>
@@ -106,7 +117,7 @@ class ContactForm extends Component {
               />
             </div>
           </div>
-          <Button>
+          <Button onClick={e => this.onSubmit(e)}>
             <p className="text-body text-hairline text-white center">Submit</p>
           </Button>
         </form>
