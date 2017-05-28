@@ -9,6 +9,11 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
 h1 {
   font-weight: 400;
 }
@@ -38,10 +43,10 @@ hr {
   display: flex;
   min-width: 60%;
   max-width: 80%;
-  justify-content: center;
-  align-content: center;
   padding: 2em;
   margin: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
   flex-flow: column;
 }
 
@@ -66,6 +71,7 @@ hr {
 
 .section-item {
   flex: auto;
+  margin: 0.25em;
 } 
 
 .app-nav-container {
