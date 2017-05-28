@@ -8,15 +8,9 @@ const SectionContent = props => {
     'section-full-width': props.fullWidth,
   });
 
-  const top = props.fullWidth ? null : <div className="section-item top" />;
-  const bottom = props.fullWidth
-    ? null
-    : <div className="section-item bottom" />;
   return (
     <div className={containerClass}>
-      {top}
-      <div className="section-item">{props.children}</div>
-      {bottom}
+      {props.children}
     </div>
   );
 };
