@@ -7,6 +7,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+  text-align: center;
 }
 
 p {
@@ -27,7 +28,7 @@ hr {
   align-items: center;
   justify-content: center;
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
 }
 
 .app-container-item {
@@ -57,6 +58,10 @@ hr {
   max-width: 100%;
 }
 
+.section-padding {
+  padding: 2.5em;
+}
+
 .top {
   width: 5em;
   height: 5em;
@@ -71,13 +76,13 @@ hr {
 
 .section-item {
   flex: auto;
-  margin: 0.25em;
 } 
 
 .app-nav-container {
   display: flex;
   flex-flow: column;
   justify-content: center;
+  padding: 0.5em;
 }
 
 .app-nav-item, .app-nav-group-item {
@@ -106,7 +111,7 @@ hr {
   background-image: linear-gradient(45deg, #0016FF 0%, #00A7FF 100%);
 }
 
-.full-width-img {
+.img-class {
   width: 100%;
   min-height: 50vh;
 }
@@ -127,7 +132,48 @@ hr {
 }
 
 @media screen and (min-width: 660px) {
+  .app-nav-container {
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 
+  .app-nav-group {
+    flex-flow: row;
+    justify-content: flex-end;
+  }
+
+  .app-nav-group-item {
+    margin-left: 0.25em;
+  }
+
+  .app-container {
+    flex-flow: row wrap;
+  }
+
+  .section-container {
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .section-item {
+    width: 33%
+  }
+
+  .info-card {
+    max-width: 100%;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    text-align: left;
+  }
+
+  .text-partial-width {
+    margin: 0;
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 810px) {

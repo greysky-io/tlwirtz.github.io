@@ -15,14 +15,14 @@
 .text-subheading {
   font-family: Lato;
   letter-spacing: 0;
-  line-height: 27px;
+  line-height: 33px;
   font-size: 24px;
 }
 
 .text-body {
   font-family: Lato;
   letter-spacing: 0;
-  line-height: 24px;
+  line-height: 27px;
   font-size: 20px
 }
 
@@ -39,7 +39,7 @@
 }
 
 .text-white {
-  color: #FFFBFE;
+  color: #FFFFFF;
 }
 
 .text-dark {
@@ -52,4 +52,15 @@
 
 .left {
   text-align: left;
+}
+
+.text-partial-width {
+  width: 60%;
+  margin: auto;
+}
+
+@media screen and (min-width: 660px) {
+  .text-partial-width {
+    margin: 0;
+  }
 }

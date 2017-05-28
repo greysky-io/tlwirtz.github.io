@@ -5,6 +5,7 @@ import SectionContent from './SectionContent';
 import SectionContentItem from './SectionContentItem';
 import InfoCard from './InfoCard';
 import Button from './Button';
+import ContactForm from './ContactForm'
 import Footer from './Footer';
 
 import mainIMG from '../assets/felix-russell-saw-112140.jpg';
@@ -15,58 +16,47 @@ const App = props => {
     <div className="app-container">
       <div className="app-container-item main-background full-height">
         <NavBar />
-        <SectionContent>
-          <SectionContentItem>
-            <h1 className="text-title text-reg text-white center">
+        <SectionContent fullWidth>
+          <SectionContentItem padding>
+            <h1 className="text-title text-reg text-white text-partial-width">
               <span className="text-reg">greysky </span>
               <span className="text-hairline">studios</span>
             </h1>
-            <h2 className="text-subheading text-hairline text-white center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus.
+            <h2 className="text-subheading text-hairline text-white text-partial-width">
+              Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
+consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus.
             </h2>
           </SectionContentItem>
         </SectionContent>
       </div>
       <div className="app-container-item">
         <SectionContent fullWidth>
-          <img src={mainIMG} className="full-width-img" />
-        </SectionContent>
-      </div>
-      <div className="app-container-item">
-        <SectionContent>
           <SectionContentItem>
+            <img src={mainIMG} className="img-class" />
+          </SectionContentItem>
+          <SectionContentItem padding>
             <h2 className="text-headline text-dark text-light left">
               Another small heading goes here
             </h2>
-          </SectionContentItem>
-          <SectionContentItem>
             <p className="text-body text-dark text-hairline left">
               Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
             </p>
           </SectionContentItem>
         </SectionContent>
       </div>
-      <div className="app-container-item blue-background">
+      <div className="app-container-item main-background">
         <SectionContent>
           <SectionContentItem>
             <h2 className="text-headline text-white text-light left">
               Ecommerce done right.
             </h2>
-          </SectionContentItem>
-          <SectionContentItem>
             <img src={shopifyLogo} className="shopify-logo" />
-          </SectionContentItem>
-          <SectionContentItem>
             <p className="text-body text-white text-hairline left">
               Duis suscipit, mauris a fringilla sollicitudin, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. massa erat fringilla lacus, id fringilla diam eros eu felis.
             </p>
-          </SectionContentItem>
-          <SectionContentItem>
             <p className="text-body text-white text-hairline left">
               Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
             </p>
-          </SectionContentItem>
-          <SectionContentItem>
             <p className="text-body text-white text-hairline left">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
             </p>
@@ -131,6 +121,13 @@ const App = props => {
           </SectionContentItem>
         </SectionContent>
       </div>
+      <div className="app-container-item">
+        <SectionContent>
+          <SectionContentItem>
+              <ContactForm />
+            </SectionContentItem>
+          </SectionContent>
+        </div>
       <Footer />
     </div>
   );
