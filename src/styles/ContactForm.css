@@ -1,0 +1,27 @@
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
+}
+
+.form-item {
+  flex: auto;
+  margin: 0.5em;
+}
+
+.form-item > input {
+  width: 99%;
+  height: 1.5em;
+  border-radius: 3px;
+  font-size: 24px;
+  font-weight: 100;
+  color: #4A4A4A;
+  padding: 5px;
+  border: thin solid #4A4A4A;
+}
+
+@media screen and (min-width: 660px) {
+  .form-container {
+    flex-flow: row wrap;
+  }
+}
