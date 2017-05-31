@@ -5,7 +5,7 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   text-align: center;
 }
@@ -37,7 +37,7 @@ hr {
 }
 
 .full-height {
-  min-height: 100vh;
+  min-height: 75vh;
 }
 
 .section-container {
@@ -166,7 +166,7 @@ hr {
     max-width: 100%;
   }
   
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     text-align: left;
   }

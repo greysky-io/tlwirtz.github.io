@@ -18,14 +18,14 @@ const App = props => {
         <NavBar />
         <SectionContent fullWidth>
           <SectionContentItem padding>
-            <h1 className="text-title text-reg text-white text-partial-width">
+            <h1 className="text-title text-reg text-white">
               <span className="text-reg">greysky </span>
               <span className="text-hairline">studios</span>
             </h1>
-            <h2 className="text-subheading text-hairline text-white text-partial-width">
+            <h2 className="text-subheading text-hairline text-white">
               Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet.
             </h2>
-            <p className="text-body text-white text-hairline left">
+            <p className="text-body text-white text-hairline">
               Duis suscipit, mauris a fringilla sollicitudin, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. massa erat fringilla lacus, id fringilla diam eros eu felis.
             </p>
           </SectionContentItem>
