@@ -5,7 +5,7 @@ import SectionContent from './SectionContent';
 import SectionContentItem from './SectionContentItem';
 import InfoCard from './InfoCard';
 import Button from './Button';
-import ContactForm from './ContactForm'
+import ContactForm from './ContactForm';
 import Footer from './Footer';
 
 import mainIMG from '../assets/felix-russell-saw-112140.jpg';
@@ -18,13 +18,14 @@ const App = props => {
         <NavBar />
         <SectionContent fullWidth>
           <SectionContentItem padding>
+            {/*TODO -- need to remove `text-partial-width`*/}
             <h1 className="text-title text-reg text-white text-partial-width">
               <span className="text-reg">greysky </span>
               <span className="text-hairline">studios</span>
             </h1>
             <h2 className="text-subheading text-hairline text-white text-partial-width">
               Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
-consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus.
+              consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus.
             </h2>
           </SectionContentItem>
         </SectionContent>
@@ -45,27 +46,27 @@ consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus.
         </SectionContent>
       </div>
       <div className="app-container-item main-background">
-        <SectionContent>
-          <SectionContentItem>
+        <SectionContent fullWidth>
+          <SectionContentItem padding>
             <h2 className="text-headline text-white text-light left">
               Ecommerce done right.
             </h2>
             <img src={shopifyLogo} className="shopify-logo" />
-            <p className="text-body text-white text-hairline left">
+            <p className="text-body text-white text-hairline left text-partial-width">
               Duis suscipit, mauris a fringilla sollicitudin, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. massa erat fringilla lacus, id fringilla diam eros eu felis.
             </p>
-            <p className="text-body text-white text-hairline left">
+            <p className="text-body text-white text-hairline left text-partial-width">
               Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
             </p>
-            <p className="text-body text-white text-hairline left">
+            <p className="text-body text-white text-hairline left text-partial-width">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
             </p>
           </SectionContentItem>
         </SectionContent>
       </div>
       <div className="app-container-item">
-        <SectionContent>
-          <SectionContentItem>
+        <SectionContent fullWidth>
+          <SectionContentItem padding>
             <InfoCard>
               <h2 className="text-headline text-hairline center info-card-item">
                 Service One
@@ -83,7 +84,7 @@ consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus.
               </Button>
             </InfoCard>
           </SectionContentItem>
-          <SectionContentItem>
+          <SectionContentItem padding>
             <InfoCard>
               <h2 className="text-headline text-hairline center  info-card-item">
                 Service Two
@@ -101,9 +102,9 @@ consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus.
               </Button>
             </InfoCard>
           </SectionContentItem>
-          <SectionContentItem>
+          <SectionContentItem padding>
             <InfoCard>
-              <h2 className="text-headline text-hairline center  info-card-item">
+              <h2 className="text-headline text-hairline center info-card-item">
                 Service Three
               </h2>
               <p className="text-body text-dark text-hairline center info-card-item">
@@ -122,12 +123,17 @@ consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus.
         </SectionContent>
       </div>
       <div className="app-container-item">
-        <SectionContent>
-          <SectionContentItem>
-              <ContactForm />
-            </SectionContentItem>
+        <SectionContent fullWidth>
+          <SectionContentItem padding>
+            <h2 className="text-dark text-hairline text-headline"> Get in touch</h2>
+          </SectionContentItem>
           </SectionContent>
-        </div>
+          <SectionContent fullWidth>
+          <SectionContentItem padding>
+            <ContactForm />
+          </SectionContentItem>
+        </SectionContent>
+      </div>
       <Footer />
     </div>
   );

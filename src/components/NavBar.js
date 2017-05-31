@@ -11,13 +11,13 @@ const NavBar = props => {
       </div>
       <div className="app-nav-group">
         <div className="app-nav-group-item">
-          <h2 className="center text-subheading text-white text-hairline">services</h2>
+          <h2 className="center text-subheading text-white text-hairline nav">services</h2>
         </div>
         <div className="app-nav-group-item">
-          <h2 className="center text-subheading text-white text-hairline">about</h2>
+          <h2 className="center text-subheading text-white text-hairline nav">about</h2>
         </div>
         <div className="app-nav-group-item">
-          <h2 className="center text-subheading text-white text-hairline">
+          <h2 className="center text-subheading text-white text-hairline nav">
             get in touch
           </h2>
         </div>
