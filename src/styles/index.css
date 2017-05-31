@@ -80,9 +80,13 @@ hr {
 
 .app-nav-container {
   display: flex;
-  flex-flow: column;
-  justify-content: center;
+  flex-flow: row;
+  justify-content: space-between;
   padding: 2em;
+}
+
+.app-nav-center {
+  justify-content: center;
 }
 
 .app-nav-item, .app-nav-group-item {
