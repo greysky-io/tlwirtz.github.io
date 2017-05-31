@@ -6,12 +6,14 @@
   margin: 0.5em;
   min-width: 150px;
   align-items: center;
+  justify-content: center;
+  max-height: 30px;
   cursor: pointer;
+  
 }
 
 .primary-button:hover {
-background: rgba(101, 0, 255, 0.8)
-  
+  background: rgba(101, 0, 255, 0.8)
 }
 
 .primary-button > p {

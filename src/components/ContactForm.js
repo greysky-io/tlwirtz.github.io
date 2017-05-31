@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from './Button';
-
-// not really working yet...
-// might need a proxy server ...
-import mailgun from 'mailgun.js';
 import axios from 'axios';
 import '../styles/ContactForm.css';
 
