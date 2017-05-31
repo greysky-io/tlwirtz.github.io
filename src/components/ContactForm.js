@@ -40,13 +40,14 @@ class ContactForm extends Component {
       budget,
       projectDetails,
     } = this.state;
-   
-   console.log('trying to send an email')
+
+    console.log('trying to send an email');
   }
 
   render() {
     return (
       <div>
+        <h2 className="text-dark text-hairline text-headline"> Get in touch</h2>
         <form>
           <div className="form-container">
             <div className="form-item">

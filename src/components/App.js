@@ -18,15 +18,16 @@ const App = props => {
         <NavBar />
         <SectionContent fullWidth>
           <SectionContentItem padding>
-            {/*TODO -- need to remove `text-partial-width`*/}
             <h1 className="text-title text-reg text-white text-partial-width">
               <span className="text-reg">greysky </span>
               <span className="text-hairline">studios</span>
             </h1>
             <h2 className="text-subheading text-hairline text-white text-partial-width">
-              Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
-              consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus.
+              Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet.
             </h2>
+            <p className="text-body text-white text-hairline left">
+              Duis suscipit, mauris a fringilla sollicitudin, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. massa erat fringilla lacus, id fringilla diam eros eu felis.
+            </p>
           </SectionContentItem>
         </SectionContent>
       </div>
@@ -52,13 +53,13 @@ const App = props => {
               Ecommerce done right.
             </h2>
             <img src={shopifyLogo} className="shopify-logo" />
-            <p className="text-body text-white text-hairline left text-partial-width">
+            <p className="text-body text-white text-hairline left">
               Duis suscipit, mauris a fringilla sollicitudin, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. massa erat fringilla lacus, id fringilla diam eros eu felis.
             </p>
-            <p className="text-body text-white text-hairline left text-partial-width">
+            <p className="text-body text-white text-hairline left">
               Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
             </p>
-            <p className="text-body text-white text-hairline left text-partial-width">
+            <p className="text-body text-white text-hairline left">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
             </p>
           </SectionContentItem>
@@ -124,11 +125,6 @@ const App = props => {
       </div>
       <div className="app-container-item">
         <SectionContent fullWidth>
-          <SectionContentItem padding>
-            <h2 className="text-dark text-hairline text-headline"> Get in touch</h2>
-          </SectionContentItem>
-          </SectionContent>
-          <SectionContent fullWidth>
           <SectionContentItem padding>
             <ContactForm />
           </SectionContentItem>
