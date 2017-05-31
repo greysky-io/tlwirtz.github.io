@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 import NavButton from './NavButton';
+import NavLinkGroup from './NavLinkGroup';
 import gssLogo from '../assets/greysky-logo.svg';
 
 class NavBar extends Component {
@@ -23,6 +23,7 @@ class NavBar extends Component {
     this.onWindowResize();
     window.addEventListener('resize', this.onWindowResize);
   }
+
   componentWillUnmount() {
     window.removeEventListener('resize', this.onWindowResize);
   }
@@ -50,27 +51,9 @@ class NavBar extends Component {
   }
 
   renderGroup() {
-    const linkGroup = (
-      <div className="app-nav-group">
-        <div className="app-nav-group-item">
-          <h2 className="center text-subheading text-white text-hairline nav">
-            services
-          </h2>
-        </div>
-        <div className="app-nav-group-item">
-          <h2 className="center text-subheading text-white text-hairline nav">
-            about
-          </h2>
-        </div>
-        <div className="app-nav-group-item">
-          <h2 className="center text-subheading text-white text-hairline nav">
-            get in touch
-          </h2>
-        </div>
-      </div>
-    );
-
-    return this.showNavLinks() ? linkGroup : null;
+    return this.showNavLinks()
+      ? <NavLinkGroup values={['services', 'about', 'get in touch']} />
+      : null;
   }
 
   render() {
