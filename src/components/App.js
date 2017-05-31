@@ -72,38 +72,39 @@ const App = props => {
         <SectionContent>
           <SectionContentItem>
             <InfoCard>
-              <h2 className="text-headline text-light center info-card-item">
-                Store Setup
-              </h2>
-              <p className="text-body text-dark text-hairline center info-card-item">
-                Everything you need to get your business selling online.
-              </p>
-              <p className="text-body text-dark text-hairline center info-card-item">
-                Start at $2.5K
-              </p>
-              <Button>
-                <p className="text-body text-white text-hairline center">
-                  Learn More
-                </p>
-              </Button>
-            </InfoCard>
-          </SectionContentItem>
-          <SectionContentItem>
-            <InfoCard>
               <h2 className="text-headline text-light center  info-card-item">
                 Store Modification
               </h2>
               <p className="text-body text-dark text-hairline center info-card-item">
                 Already have a Shopify store, but need help making modifications? This package is for you.
               </p>
-              <p className="text-body text-dark text-hairline center info-card-item">
-                Start at $2.5K
+              <p className="text-body text-dark text-hairline center">
+                Starts at $500
               </p>
-              <Button>
+              {/*<Button>
                 <p className="text-body text-white text-hairline center">
                   Learn More
                 </p>
-              </Button>
+              </Button>*/}
+            </InfoCard>
+
+          </SectionContentItem>
+          <SectionContentItem>
+            <InfoCard>
+              <h2 className="text-headline text-light center info-card-item">
+                Store Setup
+              </h2>
+              <p className="text-body text-dark text-hairline center info-card-item">
+                Everything you need to get your business selling online.
+              </p>
+              <p className="text-body text-dark text-hairline center ">
+                Starts at $2,500
+              </p>
+              {/*<Button>
+                <p className="text-body text-white text-hairline center">
+                  Learn More
+                </p>
+              </Button>*/}
             </InfoCard>
           </SectionContentItem>
           <SectionContentItem>
@@ -114,14 +115,14 @@ const App = props => {
               <p className="text-body text-dark text-hairline center info-card-item">
                 Need a custom app tailored specifically to your business needs. We're here to help.
               </p>
-              <p className="text-body text-dark text-hairline center info-card-item">
-                Start at $2.5K
+              <p className="text-body text-dark text-hairline center">
+                Start at $5,000
               </p>
-              <Button>
+              {/*<Button>
                 <p className="text-body text-white text-hairline center">
                   Learn More
                 </p>
-              </Button>
+              </Button>*/}
             </InfoCard>
           </SectionContentItem>
         </SectionContent>

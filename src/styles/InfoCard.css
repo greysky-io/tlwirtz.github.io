@@ -1,7 +1,7 @@
 .info-card {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
+  align-items: stretch;
   flex-direction: column;
   padding: 1em;
   /*border: 1px solid #343434;*/
