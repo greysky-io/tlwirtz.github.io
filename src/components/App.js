@@ -66,14 +66,17 @@ const App = props => {
         </SectionContent>
       </div>
       <div className="app-container-item">
-        <SectionContent fullWidth>
-          <SectionContentItem padding>
+        {/*TODO -- maybe think about remove this for now.
+        It might make more sense to to get people to fill out your form before
+        investing a ton of time on the other information pages.*/}
+        <SectionContent>
+          <SectionContentItem>
             <InfoCard>
-              <h2 className="text-headline text-hairline center info-card-item">
-                Service One
+              <h2 className="text-headline text-light center info-card-item">
+                Store Setup
               </h2>
               <p className="text-body text-dark text-hairline center info-card-item">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
+                Everything you need to get your business selling online.
               </p>
               <p className="text-body text-dark text-hairline center info-card-item">
                 Start at $2.5K
@@ -85,13 +88,13 @@ const App = props => {
               </Button>
             </InfoCard>
           </SectionContentItem>
-          <SectionContentItem padding>
+          <SectionContentItem>
             <InfoCard>
-              <h2 className="text-headline text-hairline center  info-card-item">
-                Service Two
+              <h2 className="text-headline text-light center  info-card-item">
+                Store Modification
               </h2>
               <p className="text-body text-dark text-hairline center info-card-item">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
+                Already have a Shopify store, but need help making modifications? This package is for you.
               </p>
               <p className="text-body text-dark text-hairline center info-card-item">
                 Start at $2.5K
@@ -103,13 +106,13 @@ const App = props => {
               </Button>
             </InfoCard>
           </SectionContentItem>
-          <SectionContentItem padding>
+          <SectionContentItem>
             <InfoCard>
-              <h2 className="text-headline text-hairline center info-card-item">
-                Service Three
+              <h2 className="text-headline text-light center info-card-item">
+                Custom App Development
               </h2>
               <p className="text-body text-dark text-hairline center info-card-item">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
+                Need a custom app tailored specifically to your business needs. We're here to help.
               </p>
               <p className="text-body text-dark text-hairline center info-card-item">
                 Start at $2.5K
