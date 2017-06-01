@@ -18,16 +18,13 @@ const App = props => {
         <NavBar />
         <SectionContent fullWidth>
           <SectionContentItem padding>
-            <h1 className="text-title text-reg text-white">
+            <h1 className="text-title text-reg text-white text-margin-bottom">
               <span className="text-reg">greysky </span>
               <span className="text-hairline">studios</span>
             </h1>
             <h2 className="text-subheading text-hairline text-white">
-              Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet.
+              Mind-blowing e-commerce for your business
             </h2>
-            <p className="text-body text-white text-hairline">
-              Duis suscipit, mauris a fringilla sollicitudin, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. massa erat fringilla lacus, id fringilla diam eros eu felis.
-            </p>
           </SectionContentItem>
         </SectionContent>
       </div>
@@ -37,11 +34,14 @@ const App = props => {
             <img src={mainIMG} className="img-class" />
           </SectionContentItem>
           <SectionContentItem padding>
-            <h2 className="text-headline text-dark text-light left">
-              Another small heading goes here
+            <h2 className="text-headline text-dark text-light left text-margin-bottom">
+              Let us help accelerate your business
             </h2>
+            <p className="text-body text-dark text-hairline left text-margin-bottom">
+              We're here to help. Whether you're looking to launch your first online store, or need help fine-tuning your back-office processing we can craft the right solution for your business.
+            </p>
             <p className="text-body text-dark text-hairline left">
-              Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
+              We specialize in creating brand new stores, off the shelf app integration and custom app development.
             </p>
           </SectionContentItem>
         </SectionContent>
@@ -54,21 +54,20 @@ const App = props => {
             </h2>
             <img src={shopifyLogo} className="shopify-logo" />
             <p className="text-body text-white text-hairline left">
-              Duis suscipit, mauris a fringilla sollicitudin, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. massa erat fringilla lacus, id fringilla diam eros eu felis.
+              Shopify is what e-commerce was meant to be. The all-in-one platform has everything you need to help you run your business.
             </p>
+            <h2 className="text-subheading text-white text-light left"> Manage your business with ease.</h2>
+            <p className="text-body text-white text-hairline left">
+              Manage orders & payments, track sales trends, run marketing campaigns all from within the Shopify system. Join the 350,000+ merchants who run their business on Shopify.
+            </p>
+            <h2 className="text-subheading text-white text-light left">Beautiful storefronts. Mobile ready. No hassle.</h2>
             <p className="text-body text-white text-hairline left">
               Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
-            </p>
-            <p className="text-body text-white text-hairline left">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices orci eu dapibus. Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
             </p>
           </SectionContentItem>
         </SectionContent>
       </div>
       <div className="app-container-item">
-        {/*TODO -- maybe think about remove this for now.
-        It might make more sense to to get people to fill out your form before
-        investing a ton of time on the other information pages.*/}
         <SectionContent>
           <SectionContentItem>
             <InfoCard>
@@ -113,7 +112,7 @@ const App = props => {
                 Custom App Development
               </h2>
               <p className="text-body text-dark text-hairline center info-card-item">
-                Need a custom app tailored specifically to your business needs. We're here to help.
+                Need a custom app tailored specifically to your business needs? We're here to help.
               </p>
               <p className="text-body text-dark text-hairline center">
                 Start at $5,000
