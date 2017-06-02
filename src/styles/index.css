@@ -133,6 +133,12 @@ hr {
   margin-bottom: 1.75em;
 }
 
+.service-icon {
+  width: 33%;
+  height: 33%;
+  margin: 2em;
+}
+
 /* Regular smart phones, including iPhone 6 + with 414px viewport! */
 @media screen and (min-width: 414px) {
 

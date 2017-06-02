@@ -1,13 +1,12 @@
 .info-card {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 2em;
-  /*border: 1px solid #343434;*/
+  border: 1px solid #343434;
   border-radius: 7px;
   margin: 0.25em;
-  height: 30vh;
 }
 
 .info-card-item {

@@ -10,6 +10,9 @@ import Footer from './Footer';
 
 import mainIMG from '../assets/felix-russell-saw-112140.jpg';
 import shopifyLogo from '../assets/shopify_monotone_white.svg';
+import editIcon from '../assets/edit-icon.svg';
+import openSign from '../assets/open-sign.svg';
+import customIcon from '../assets/computer-gear.svg';
 
 const App = props => {
   return (
@@ -23,7 +26,7 @@ const App = props => {
               <span className="text-hairline">studios</span>
             </h1>
             <h2 className="text-subheading text-hairline text-white">
-              Mind-blowing e-commerce for your business -- play with font sizes
+              Mind-blowing e-commerce for your business{' '}
             </h2>
           </SectionContentItem>
         </SectionContent>
@@ -57,7 +60,7 @@ const App = props => {
               Ecommerce done right.
             </h2>
             <p className="text-body text-white text-hairline left text-margin-bottom">
-              Shopify is what e-commerce was meant to be. 
+              Shopify is what e-commerce was meant to be.
               <br />
               The all-in-one platform has everything you need to help you run your business.
             </p>
@@ -82,9 +85,7 @@ const App = props => {
         <SectionContent>
           <SectionContentItem>
             <InfoCard>
-              <p className="text-body text-dark text-hairline center info-card-item">
-                Icon here.
-              </p>
+              <img src={editIcon} className="service-icon" />
               <h2 className="text-headline text-light center  info-card-item">
                 Store Modification
               </h2>
@@ -104,9 +105,8 @@ const App = props => {
           </SectionContentItem>
           <SectionContentItem>
             <InfoCard>
-              <p className="text-body text-dark text-hairline center info-card-item">
-                Icon here.
-              </p>
+              <img src={openSign} className="service-icon" />
+
               <h2 className="text-headline text-light center info-card-item">
                 Store Setup
               </h2>
@@ -125,9 +125,7 @@ const App = props => {
           </SectionContentItem>
           <SectionContentItem>
             <InfoCard>
-              <p className="text-body text-dark text-hairline center info-card-item">
-                Icon here.
-              </p>
+              <img src={customIcon} className="service-icon" />
               <h2 className="text-headline text-light center info-card-item">
                 Custom App Development
               </h2>
