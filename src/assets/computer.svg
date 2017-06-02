@@ -1,0 +1,28 @@
+
+<svg width="480px" height="448px" viewBox="0 0 480 448" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#8600C6" offset="0%"></stop>
+            <stop stop-color="#6B00FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-6" fill-rule="nonzero" fill="url(#linearGradient-1)">
+            <path d="M456,216 L456,40 C456,17.944 438.056,0 416,0 L64,0 C41.944,0 24,17.944 24,40 L24,160 C10.768,160 0,170.768 0,184 L0,424 C0,437.232 10.768,448 24,448 L200,448 C213.232,448 224,437.232 224,424 L291.048,424 C298.592,424 305.544,420.56 310.12,414.568 C314.696,408.576 316.184,400.96 314.2,393.688 L298.472,336 L344,336 L344,424 C344,437.232 354.768,448 368,448 L456,448 C469.232,448 480,437.232 480,424 L480,240 C480,226.768 469.232,216 456,216 Z M208,424 C208,428.408 204.408,432 200,432 L24,432 C19.592,432 16,428.408 16,424 L16,408 L208,408 L208,424 Z M208,392 L16,392 L16,216 L208,216 L208,392 Z M208,200 L16,200 L16,184 C16,179.592 19.592,176 24,176 L200,176 C204.408,176 208,179.592 208,184 L208,200 Z M298.768,397.896 C299.432,400.32 298.936,402.856 297.408,404.856 C295.88,406.856 293.568,408 291.048,408 L224,408 L224,392 L297.16,392 L298.768,397.896 Z M224,376 L224,336 L281.888,336 L292.8,376 L224,376 Z M344,320 L224,320 L224,272 L344,272 L344,320 Z M344,240 L344,256 L224,256 L224,184 C224,170.768 213.232,160 200,160 L40,160 L40,40 C40,26.768 50.768,16 64,16 L416,16 C429.232,16 440,26.768 440,40 L440,216 L368,216 C354.768,216 344,226.768 344,240 Z M464,424 C464,428.408 460.408,432 456,432 L368,432 C363.592,432 360,428.408 360,424 L360,408 L464,408 L464,424 Z M464,392 L360,392 L360,272 L464,272 L464,392 Z M464,256 L360,256 L360,240 C360,235.592 363.592,232 368,232 L456,232 C460.408,232 464,235.592 464,240 L464,256 Z" id="Shape"></path>
+            <rect id="Rectangle-path" transform="translate(63.997257, 319.991857) rotate(-45.000000) translate(-63.997257, -319.991857) " x="41.3694744" y="311.991934" width="45.255566" height="15.9998466"></rect>
+            <rect id="Rectangle-path" transform="translate(127.994497, 311.993332) rotate(-45.000000) translate(-127.994497, -311.993332) " x="60.1116478" y="303.993409" width="135.765698" height="15.9998466"></rect>
+            <rect id="Rectangle-path" transform="translate(119.991239, 264.004232) rotate(-45.000000) translate(-119.991239, -264.004232) " x="86.0520648" y="256.004308" width="67.878349" height="15.9998466"></rect>
+            <rect id="Rectangle-path" transform="translate(403.979497, 316.008217) rotate(-45.000000) translate(-403.979497, -316.008217) " x="375.700268" y="308.008294" width="56.5584576" height="15.9998466"></rect>
+            <rect id="Rectangle-path" transform="translate(419.976417, 348.042280) rotate(-45.000000) translate(-419.976417, -348.042280) " x="391.697188" y="340.042356" width="56.5584576" height="15.9998466"></rect>
+            <rect id="Rectangle-path" transform="translate(239.989004, 120.002725) rotate(-45.000000) translate(-239.989004, -120.002725) " x="206.049829" y="112.002801" width="67.878349" height="15.9998466"></rect>
+            <rect id="Rectangle-path" transform="translate(311.993532, 104.002682) rotate(-45.000000) translate(-311.993532, -104.002682) " x="278.054358" y="96.0027587" width="67.878349" height="15.9998466"></rect>
+            <rect id="Rectangle-path" transform="translate(255.988914, 160.010228) rotate(-45.000000) translate(-255.988914, -160.010228) " x="233.361131" y="152.010305" width="45.255566" height="15.9998466"></rect>
+            <rect id="Rectangle-path" transform="translate(295.983141, 64.062840) rotate(-45.000000) translate(-295.983141, -64.062840) " x="273.299358" y="56.0629163" width="45.3675649" height="15.9998466"></rect>
+            <rect id="Rectangle-path" x="56" y="32" width="16" height="16"></rect>
+            <rect id="Rectangle-path" x="88" y="32" width="16" height="16"></rect>
+            <rect id="Rectangle-path" x="120" y="32" width="16" height="16"></rect>
+        </g>
+    </g>
+</svg>
