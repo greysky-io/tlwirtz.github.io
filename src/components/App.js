@@ -16,24 +16,21 @@ const App = props => {
     <div className="app-container">
       <div className="app-container-item main-background full-height">
         <NavBar />
-        <SectionContent fullWidth>
+        <SectionContent fullWidth fullHeight>
           <SectionContentItem padding>
-            <h1 className="text-title text-reg text-white text-margin-bottom">
+            <h1 className="text-title text-reg text-white">
               <span className="text-reg">greysky </span>
               <span className="text-hairline">studios</span>
             </h1>
             <h2 className="text-subheading text-hairline text-white">
-              Mind-blowing e-commerce for your business
+              Mind-blowing e-commerce for your business -- play with font sizes
             </h2>
           </SectionContentItem>
         </SectionContent>
       </div>
       <div className="app-container-item">
-        <SectionContent fullWidth>
+        <SectionContent>
           <SectionContentItem>
-            <img src={mainIMG} className="img-class" />
-          </SectionContentItem>
-          <SectionContentItem padding>
             <h2 className="text-headline text-dark text-light left text-margin-bottom">
               Let us help accelerate your business
             </h2>
@@ -44,24 +41,38 @@ const App = props => {
               We specialize in creating brand new stores, off the shelf app integration and custom app development.
             </p>
           </SectionContentItem>
+          <SectionContentItem>
+            <h2 className="text-headline text-dark text-light center text-margin-bottom">
+              Image Here.
+            </h2>
+            {/*<img src={mainIMG} className="img-class" />*/}
+          </SectionContentItem>
         </SectionContent>
       </div>
       <div className="app-container-item main-background">
-        <SectionContent fullWidth>
-          <SectionContentItem padding>
-            <h2 className="text-headline text-white text-light left">
+        <SectionContent>
+          <SectionContentItem>
+            <img src={shopifyLogo} className="shopify-logo" />
+            <h2 className="text-headline text-white text-light left text-margin-bottom">
               Ecommerce done right.
             </h2>
-            <img src={shopifyLogo} className="shopify-logo" />
-            <p className="text-body text-white text-hairline left">
-              Shopify is what e-commerce was meant to be. The all-in-one platform has everything you need to help you run your business.
+            <p className="text-body text-white text-hairline left text-margin-bottom">
+              Shopify is what e-commerce was meant to be. 
+              <br />
+              The all-in-one platform has everything you need to help you run your business.
             </p>
-            <h2 className="text-subheading text-white text-light left"> Manage your business with ease.</h2>
-            <p className="text-body text-white text-hairline left">
-              Manage orders & payments, track sales trends, run marketing campaigns all from within the Shopify system. Join the 350,000+ merchants who run their business on Shopify.
+            <h2 className="text-headline text-white text-light left text-margin-bottom">
+              Manage your business with ease.
+            </h2>
+            <p className="text-body text-white text-hairline left text-margin-bottom">
+              Manage orders & payments, track sales trends, run marketing campaigns all from within the Shopify system.
+              <br />
+              Join the 350,000+ merchants who run their business on Shopify.
             </p>
-            <h2 className="text-subheading text-white text-light left">Beautiful storefronts. Mobile ready. No hassle.</h2>
-            <p className="text-body text-white text-hairline left">
+            <h2 className="text-headline text-white text-light left text-margin-bottom">
+              Beautiful storefronts. Mobile ready. No hassle.
+            </h2>
+            <p className="text-body text-white text-hairline left text-margin-bottom">
               Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
             </p>
           </SectionContentItem>
@@ -71,6 +82,9 @@ const App = props => {
         <SectionContent>
           <SectionContentItem>
             <InfoCard>
+              <p className="text-body text-dark text-hairline center info-card-item">
+                Icon here.
+              </p>
               <h2 className="text-headline text-light center  info-card-item">
                 Store Modification
               </h2>
@@ -90,6 +104,9 @@ const App = props => {
           </SectionContentItem>
           <SectionContentItem>
             <InfoCard>
+              <p className="text-body text-dark text-hairline center info-card-item">
+                Icon here.
+              </p>
               <h2 className="text-headline text-light center info-card-item">
                 Store Setup
               </h2>
@@ -108,6 +125,9 @@ const App = props => {
           </SectionContentItem>
           <SectionContentItem>
             <InfoCard>
+              <p className="text-body text-dark text-hairline center info-card-item">
+                Icon here.
+              </p>
               <h2 className="text-headline text-light center info-card-item">
                 Custom App Development
               </h2>
@@ -127,8 +147,8 @@ const App = props => {
         </SectionContent>
       </div>
       <div className="app-container-item">
-        <SectionContent fullWidth>
-          <SectionContentItem padding>
+        <SectionContent>
+          <SectionContentItem>
             <ContactForm />
           </SectionContentItem>
         </SectionContent>

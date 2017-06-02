@@ -1,14 +1,15 @@
 .text-title {
   font-family: Lato;
-  font-size: 72px;
-  line-height: 84px;
+  font-size: 48px;
+  line-height: 57px;
   letter-spacing: 0;
+  margin-bottom: 0.25em;
 }
 
 .text-headline {
   font-family: Lato;
   letter-spacing: 0;
-  line-height: 44px;
+  line-height: 57px;
   font-size: 36px;
 }
 
@@ -60,7 +61,7 @@
 }
 
 .text-margin-bottom {
-  margin-bottom: .25em;
+  margin-bottom: 0.5em;
 }
 .nav:hover {
   color: rgba(255, 255, 255, 0.6);
