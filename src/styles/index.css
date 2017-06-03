@@ -52,7 +52,7 @@ hr {
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .section-no-padding {
@@ -73,6 +73,12 @@ hr {
 .section-item {
   flex: auto;
 } 
+
+.section-item > img {
+  align-self: center;
+  margin-left: 25%;
+  margin-right: 25%;
+}
 
 .app-nav-container {
   display: flex;
@@ -127,6 +133,13 @@ hr {
   width: 50%;
   height: 50%;
 }
+
+.flex-item {
+  flex: auto;
+  align-self: center;
+}
+
+
 
 /* Regular smart phones, including iPhone 6 + with 414px viewport! */
 @media screen and (min-width: 414px) {
