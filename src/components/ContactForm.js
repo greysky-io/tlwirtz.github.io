@@ -43,7 +43,7 @@ class ContactForm extends Component {
   render() {
     return (
       <div>
-        <h2 className="text-dark text-hairline text-headline"> Get in touch</h2>
+        <h2 className="text-dark text-light text-headline"> Get in touch</h2>
         <form>
           <div className="form-container">
             <div className="form-item">
