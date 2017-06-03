@@ -157,6 +157,7 @@ const App = props => {
       <div className="app-container-item">
         <SectionContent>
           <SectionContentItem>
+            {/*We are going to try to use cloud functions for this*/}
             <ContactForm />
           </SectionContentItem>
         </SectionContent>
