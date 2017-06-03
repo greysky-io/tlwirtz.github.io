@@ -93,10 +93,12 @@ const App = props => {
           </SectionContentItem>
           <SectionContentItem padding flexStart>
             <h2 className="text-headline text-white text-light center text-margin-bottom">
-              Beautiful storefronts. Mobile ready. No hassle.
+              Beautiful storefronts. Mobile ready.
             </h2>
             <p className="text-body text-white text-hairline center text-margin-bottom">
-              Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
+              With hundreds of robust themes, your products will look beautiful whether on mobile, tablet or desktop.
+              <br />
+              All themes are fully customizable, no coding required.
             </p>
           </SectionContentItem>
         </SectionContent>
