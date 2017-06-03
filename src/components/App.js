@@ -26,7 +26,7 @@ const App = props => {
               <span className="text-hairline">studios</span>
             </h1>
             <h2 className="text-subheading text-hairline text-white">
-              Mind-blowing e-commerce for your business{' '}
+              Mind-blowing e-commerce for your business
             </h2>
           </SectionContentItem>
         </SectionContent>
@@ -83,7 +83,7 @@ const App = props => {
       </div>
       <div className="app-container-item">
         <SectionContent>
-          <SectionContentItem>
+          <SectionContentItem flexStart>
             <InfoCard>
               <img src={editIcon} className="service-icon" />
               <h2 className="text-headline text-light center  info-card-item">
@@ -95,15 +95,9 @@ const App = props => {
               <p className="text-body text-dark text-hairline center">
                 Starts at $500
               </p>
-              {/*<Button>
-                <p className="text-body text-white text-hairline center">
-                  Learn More
-                </p>
-              </Button>*/}
             </InfoCard>
-
           </SectionContentItem>
-          <SectionContentItem>
+          <SectionContentItem flexStart>
             <InfoCard>
               <img src={openSign} className="service-icon" />
 
@@ -116,14 +110,9 @@ const App = props => {
               <p className="text-body text-dark text-hairline center ">
                 Starts at $2,500
               </p>
-              {/*<Button>
-                <p className="text-body text-white text-hairline center">
-                  Learn More
-                </p>
-              </Button>*/}
             </InfoCard>
           </SectionContentItem>
-          <SectionContentItem>
+          <SectionContentItem flexStart>
             <InfoCard>
               <img src={customIcon} className="service-icon" />
               <h2 className="text-headline text-light center info-card-item">
@@ -135,11 +124,6 @@ const App = props => {
               <p className="text-body text-dark text-hairline center">
                 Start at $5,000
               </p>
-              {/*<Button>
-                <p className="text-body text-white text-hairline center">
-                  Learn More
-                </p>
-              </Button>*/}
             </InfoCard>
           </SectionContentItem>
         </SectionContent>

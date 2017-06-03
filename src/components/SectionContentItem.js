@@ -7,6 +7,7 @@ const SectionContentItem = props => {
   const itemClass = className({
     'section-item': true,
     'section-padding': props.padding,
+    'flex-start': props.flexStart
   });
 
   return (
