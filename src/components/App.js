@@ -8,11 +8,12 @@ import Button from './Button';
 import ContactForm from './ContactForm';
 import Footer from './Footer';
 
-import mainIMG from '../assets/felix-russell-saw-112140.jpg';
+import greyskyLogo from '../assets/greysky-logo.svg';
 import shopifyLogo from '../assets/shopify_monotone_white.svg';
 import editIcon from '../assets/edit-icon.svg';
 import openSign from '../assets/open-sign.svg';
 import customIcon from '../assets/computer-gear.svg';
+import rocket from '../assets/rocket-ship.svg';
 
 const App = props => {
   return (
@@ -45,37 +46,56 @@ const App = props => {
             </p>
           </SectionContentItem>
           <SectionContentItem>
-            <h2 className="text-headline text-dark text-light center text-margin-bottom">
-              Image Here.
-            </h2>
-            {/*<img src={mainIMG} className="img-class" />*/}
+            <SectionContent noPadding>
+              <img src={rocket} className="service-icon service-icon-large" />
+            </SectionContent>
           </SectionContentItem>
         </SectionContent>
       </div>
       <div className="app-container-item main-background">
-        <SectionContent>
+        <SectionContent >
           <SectionContentItem>
-            <img src={shopifyLogo} className="shopify-logo" />
-            <h2 className="text-headline text-white text-light left text-margin-bottom">
+            <h2 className="text-white text-reg text-title center">
+              we
+            </h2>
+          </SectionContentItem>
+          <SectionContentItem>
+            <h2 className="text-white text-reg text-title center">
+              <i className="fa fa-heart" />
+            </h2>
+          </SectionContentItem>
+          <SectionContentItem>
+            <SectionContent noPadding>
+              <img src={shopifyLogo} />
+            </SectionContent>
+          </SectionContentItem>
+        </SectionContent>
+        <SectionContent >
+          <SectionContentItem padding flexStart>
+            <h2 className="text-headline text-white text-light center text-margin-bottom">
               Ecommerce done right.
             </h2>
-            <p className="text-body text-white text-hairline left text-margin-bottom">
+            <p className="text-body text-white text-hairline center text-margin-bottom">
               Shopify is what e-commerce was meant to be.
               <br />
               The all-in-one platform has everything you need to help you run your business.
             </p>
-            <h2 className="text-headline text-white text-light left text-margin-bottom">
+          </SectionContentItem>
+          <SectionContentItem padding flexStart>
+            <h2 className="text-headline text-white text-light center text-margin-bottom">
               Manage your business with ease.
             </h2>
-            <p className="text-body text-white text-hairline left text-margin-bottom">
+            <p className="text-body text-white text-hairline center text-margin-bottom">
               Manage orders & payments, track sales trends, run marketing campaigns all from within the Shopify system.
               <br />
               Join the 350,000+ merchants who run their business on Shopify.
             </p>
-            <h2 className="text-headline text-white text-light left text-margin-bottom">
+          </SectionContentItem>
+          <SectionContentItem padding flexStart>
+            <h2 className="text-headline text-white text-light center text-margin-bottom">
               Beautiful storefronts. Mobile ready. No hassle.
             </h2>
-            <p className="text-body text-white text-hairline left text-margin-bottom">
+            <p className="text-body text-white text-hairline center text-margin-bottom">
               Duis suscipit, mauris a fringilla sollicitudin, massa erat fringilla lacus, id fringilla diam eros eu felis.
             </p>
           </SectionContentItem>
@@ -100,7 +120,6 @@ const App = props => {
           <SectionContentItem flexStart>
             <InfoCard>
               <img src={openSign} className="service-icon" />
-
               <h2 className="text-headline text-light center info-card-item">
                 Store Setup
               </h2>

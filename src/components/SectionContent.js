@@ -6,7 +6,7 @@ const SectionContent = props => {
   const containerClass = className({
     'section-container': true,
     'section-full-width': props.fullWidth,
-    'section-full-height': props.fullHeight,
+    'section-no-padding': props.noPadding,
   });
 
   return (

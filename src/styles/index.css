@@ -43,7 +43,6 @@ hr {
 
 .section-container {
   display: flex;
-  min-height: 50vh;
   min-width: 50%;
   max-width: 100%;
   padding: 2em;
@@ -56,8 +55,8 @@ hr {
   overflow: hidden;
 }
 
-.section-full-height {
-  min-height: 65vh;
+.section-no-padding {
+  padding: 0
 }
 
 .section-full-width {
@@ -69,18 +68,6 @@ hr {
 
 .section-padding {
   padding: 2.5em;
-}
-
-.top {
-  width: 5em;
-  height: 5em;
-  align-self: flex-start;
-}
-
-.bottom {
-  width: 5em;
-  height: 5em;
-  align-self: flex-end;
 }
 
 .section-item {
@@ -130,15 +117,15 @@ hr {
   min-height: 50vh;
 }
 
-.shopify-logo {
-  margin-top: 2.25em;
-  margin-bottom: 1.75em;
-}
-
 .service-icon {
   width: 33%;
   height: 33%;
   margin: 2em;
+}
+
+.service-icon-large {
+  width: 50%;
+  height: 50%;
 }
 
 /* Regular smart phones, including iPhone 6 + with 414px viewport! */
@@ -151,7 +138,7 @@ hr {
 
 }
 
-@media screen and (min-width: 660px) {
+@media screen and (min-width: 775px) {
   .app-nav-container {
     flex-flow: row;
     align-items: center;
@@ -174,7 +161,6 @@ hr {
   .section-container {
     flex-flow: row;
     max-width: 90%;
-
   }
 
   .section-item {
@@ -201,6 +187,7 @@ hr {
     margin: 0;
     width: 100%;
   }
+
 }
 
 @media screen and (min-width: 810px) {
