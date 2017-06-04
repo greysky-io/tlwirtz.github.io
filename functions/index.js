@@ -1,16 +1,9 @@
 const functions = require('firebase-functions');
 const mailgun = require('mailgun-js');
-const cors = require('cors');
+const cors = require('cors')({origin: true});
 const api_key = functions.config().mailgun.key;
 const domain = functions.config().mailgun.domain;
 const mg = mailgun({ apiKey: api_key, domain: domain });
-
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
 
 exports.sendMail = functions.https.onRequest((request, response) => {
   cors(request, response, () => {
@@ -29,10 +22,8 @@ exports.sendMail = functions.https.onRequest((request, response) => {
     mg.messages().send(data, function(err, body) {
       if (err) {
         console.log('err', err);
-        response.send('There was an issue');
+        response.status(500).send('There was an error');
       }
-
-      console.log('body', body);
       response.send(body);
     });
   });
