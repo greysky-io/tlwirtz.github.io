@@ -14,7 +14,7 @@ const Select = props => {
         onBlur={e => onBlur(e)}
         type="text"
       >
-        {options.map(opt => <option id={opt.id}>{opt.value}</option>)}
+        {options.map(opt => <option key={opt.id}>{opt.value}</option>)}
       </select>
     </div>
   );
