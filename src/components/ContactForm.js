@@ -66,13 +66,32 @@ class ContactForm extends Component {
       },
     };
     this.isInvalid = this.isInvalid.bind(this);
+    this.anyInvalid = this.anyInvalid.bind(this);
+    this.validateAll = this.validateAll.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onBlur = this.onBlur.bind(this);
   }
 
+  validateAll() {
+    const state = this.state;
+    Object.keys(state).map(key => {
+      const field = state[key];
+      const errors = validate(field.value, field.validators);
+      state[key] = { ...field, errors };
+    });
+
+    this.setState(state);
+  }
+
   isInvalid(errors) {
     return errors.length > 0;
+  }
+
+  anyInvalid() {
+    return Object.keys(this.state)
+      .map(key => this.state[key].errors)
+      .reduce((prev, curr) => prev || this.isInvalid(curr), false);
   }
 
   onChange(e) {
@@ -90,6 +109,9 @@ class ContactForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+    this.validateAll();
+    if (this.anyInvalid()) return;
+
     const {
       firstName,
       lastName,
