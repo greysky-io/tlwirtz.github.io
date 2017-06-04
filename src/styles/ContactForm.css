@@ -20,6 +20,10 @@
   border: thin solid #4A4A4A;
 }
 
+input.input-error {
+  border: thin solid rgba(255, 69, 0, 1);
+}
+
 @media screen and (min-width: 660px) {
   .form-container {
     flex-flow: row wrap;

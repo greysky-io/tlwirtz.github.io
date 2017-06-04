@@ -18,7 +18,7 @@ const validate = (value, validatorList) => {
   };
 
   return validatorList.reduce(
-    (memo, validator) => [...memo, validators[validator](value)],
+    (memo, validator) => [...memo, ...validators[validator](value)],
     []
   );
 };
@@ -63,9 +63,14 @@ class ContactForm extends Component {
         errors: [],
       },
     };
+    this.setErrorClass = this.setErrorClass.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onBlur = this.onBlur.bind(this);
+  }
+
+  setErrorClass(errors) {
+    return errors.length > 0 ? 'input-error' : '';
   }
 
   onChange(e) {
@@ -78,7 +83,7 @@ class ContactForm extends Component {
     const { name } = e.target;
     const field = this.state[name];
     const errors = validate(field.value, field.validators);
-    this.setState({ [name]: {...field, errors}})
+    this.setState({ [name]: { ...field, errors } });
   }
 
   onSubmit(e) {
@@ -112,6 +117,7 @@ class ContactForm extends Component {
         <form>
           <div className="form-container">
             <div className="form-item">
+              {/*extract this out into a form item component*/}
               <p className="text-body text-dark text-hairline">First Name</p>
               <input
                 id="first-name"
@@ -120,7 +126,13 @@ class ContactForm extends Component {
                 value={this.state.firstName.value}
                 onChange={e => this.onChange(e)}
                 onBlur={e => this.onBlur(e)}
+                className={this.setErrorClass(this.state.firstName.errors)}
               />
+              {this.state.firstName.errors.length > 0
+                ? <p className="text-body text-dark text-light">
+                    {this.state.firstName.errors[0]}
+                  </p>
+                : null}
             </div>
             <div className="form-item">
               <p className="text-body text-dark text-hairline">Last Name</p>
