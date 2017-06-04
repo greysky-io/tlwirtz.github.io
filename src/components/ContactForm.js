@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import validator from 'validator';
 import Button from './Button';
+import Input from './Input';
 
 import '../styles/ContactForm.css';
 
@@ -63,14 +64,14 @@ class ContactForm extends Component {
         errors: [],
       },
     };
-    this.setErrorClass = this.setErrorClass.bind(this);
+    this.isInvalid = this.isInvalid.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onBlur = this.onBlur.bind(this);
   }
 
-  setErrorClass(errors) {
-    return errors.length > 0 ? 'input-error' : '';
+  isInvalid(errors) {
+    return errors.length > 0;
   }
 
   onChange(e) {
@@ -116,59 +117,68 @@ class ContactForm extends Component {
         <h2 className="text-dark text-light text-headline"> Get in touch</h2>
         <form>
           <div className="form-container">
-            <div className="form-item">
-              {/*extract this out into a form item component*/}
-              <p className="text-body text-dark text-hairline">First Name</p>
-              <input
-                id="first-name"
-                type="text"
-                name="firstName"
-                value={this.state.firstName.value}
-                onChange={e => this.onChange(e)}
-                onBlur={e => this.onBlur(e)}
-                className={this.setErrorClass(this.state.firstName.errors)}
-              />
-              {this.state.firstName.errors.length > 0
-                ? <p className="text-body text-dark text-light">
-                    {this.state.firstName.errors[0]}
-                  </p>
-                : null}
-            </div>
-            <div className="form-item">
-              <p className="text-body text-dark text-hairline">Last Name</p>
-              <input
-                onChange={e => this.onChange(e)}
-                onBlur={e => this.onBlur(e)}
-                value={this.state.lastName.value}
-                id="last-name"
-                name="lastName"
-                type="text"
-              />
-            </div>
-            <div className="form-item">
-              <p className="text-body text-dark text-hairline">Company</p>
-              <input
-                onChange={e => this.onChange(e)}
-                onBlur={e => this.onBlur(e)}
-                value={this.state.company.value}
-                id="company"
-                name="company"
-                type="text"
-              />
-            </div>
+            <Input
+              displayName="First Name"
+              inputId="first-name"
+              type="text"
+              name="firstName"
+              value={this.state.firstName.value}
+              onChange={this.onChange}
+              onBlur={this.onBlur}
+              isInvalid={this.isInvalid(this.state.firstName.errors)}
+              invalidMsg={
+                this.isInvalid(this.state.firstName.errors)
+                  ? this.state.firstName.errors[0]
+                  : ''
+              }
+            />
+            <Input
+              displayName="Last Name"
+              inputId="last-name"
+              type="text"
+              name="lastName"
+              value={this.state.lastName.value}
+              onChange={this.onChange}
+              onBlur={this.onBlur}
+              isInvalid={this.isInvalid(this.state.lastName.errors)}
+              invalidMsg={
+                this.isInvalid(this.state.lastName.errors)
+                  ? this.state.lastName.errors[0]
+                  : ''
+              }
+            />
+            <Input
+              displayName="Company"
+              inputId="company"
+              type="text"
+              name="company"
+              value={this.state.company.value}
+              onChange={this.onChange}
+              onBlur={this.onBlur}
+              isInvalid={this.isInvalid(this.state.company.errors)}
+              invalidMsg={
+                this.isInvalid(this.state.company.errors)
+                  ? this.state.company.errors[0]
+                  : ''
+              }
+            />
           </div>
           <div className="form-container">
-            <div className="form-item">
-              <p className="text-body text-dark text-hairline">Email</p>
-              <input
-                id="email"
-                name="email"
-                type="text"
-                value={this.state.email.value}
-                onBlur={e => this.onBlur(e)}
-                onChange={e => this.onChange(e)}
-              />
-            </div>
+            <Input
+              displayName="Email"
+              inputId="email"
+              type="text"
+              name="email"
+              value={this.state.email.value}
+              onChange={this.onChange}
+              onBlur={this.onBlur}
+              isInvalid={this.isInvalid(this.state.email.errors)}
+              invalidMsg={
+                this.isInvalid(this.state.email.errors)
+                  ? this.state.email.errors[0]
+                  : ''
+              }
+            />
           </div>
           <div className="form-container">
             <div className="form-item">
@@ -186,32 +196,38 @@ class ContactForm extends Component {
                 <option id="custom-app">Custom App Development</option>
               </select>
             </div>
-            <div className="form-item">
-              <p className="text-body text-dark text-hairline">Budget</p>
-              <input
-                id="budget"
-                name="budget"
-                value={this.state.budget.value}
-                onChange={e => this.onChange(e)}
-                onBlur={e => this.onBlur(e)}
-                type="text"
-              />
-            </div>
+            <Input
+              displayName="Budget"
+              inputId="budget"
+              type="text"
+              name="budget"
+              value={this.state.budget.value}
+              onChange={this.onChange}
+              onBlur={this.onBlur}
+              isInvalid={this.isInvalid(this.state.budget.errors)}
+              invalidMsg={
+                this.isInvalid(this.state.budget.errors)
+                  ? this.state.budget.errors[0]
+                  : ''
+              }
+            />
           </div>
           <div className="form-container">
-            <div className="form-item">
-              <p className="text-body text-dark text-hairline">
-                Project Details
-              </p>
-              <input
-                id="project-details"
-                name="projectDetails"
-                value={this.state.projectDetails.value}
-                onChange={e => this.onChange(e)}
-                onBlur={e => this.onBlur(e)}
-                type="text"
-              />
-            </div>
+            <Input
+              displayName="Project Details"
+              inputId="project-details"
+              type="text"
+              name="projectDetails"
+              value={this.state.projectDetails.value}
+              onChange={this.onChange}
+              onBlur={this.onBlur}
+              isInvalid={this.isInvalid(this.state.projectDetails.errors)}
+              invalidMsg={
+                this.isInvalid(this.state.projectDetails.errors)
+                  ? this.state.projectDetails.errors[0]
+                  : ''
+              }
+            />
           </div>
           <Button onClick={e => this.onSubmit(e)}>
             <p className="text-body text-hairline text-white center">Submit</p>

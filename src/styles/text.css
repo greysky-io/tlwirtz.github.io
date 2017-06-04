@@ -51,6 +51,10 @@
   color: #8600C6;
 }
 
+.text-error {
+  color: rgba(255, 69, 0, 1);
+}
+
 .center {
   text-align: center;
 }
