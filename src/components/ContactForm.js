@@ -37,7 +37,16 @@ class ContactForm extends Component {
       projectDetails,
     } = this.state;
 
-    console.log('trying to send an email');
+    const subject = 'New Greysky.io Contact Request';
+    const text = `Name: ${firstName} ${lastName}\nEmail: ${email}\nCompany: ${company}\nProject Type: ${projectType}\nBudget: ${budget}\nProject Details: ${projectDetails}`;
+
+    axios
+      .post('https://us-central1-greysky-io.cloudfunctions.net/sendMail', {
+       subject,
+       text
+      })
+      .then(res => console.log('res', res))
+      .catch(err => console.log('err', err));
   }
 
   render() {
