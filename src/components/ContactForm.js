@@ -4,6 +4,7 @@ import axios from 'axios';
 import validator from 'validator';
 import Button from './Button';
 import Input from './Input';
+import Select from './Select';
 
 import '../styles/ContactForm.css';
 
@@ -181,21 +182,19 @@ class ContactForm extends Component {
             />
           </div>
           <div className="form-container">
-            <div className="form-item">
-              <p className="text-body text-dark text-hairline">Project Type</p>
-              <select
-                id="project-type"
-                name="projectType"
-                value={this.state.projectType.value}
-                onChange={e => this.onChange(e)}
-                onBlur={e => this.onBlur(e)}
-                type="text"
-              >
-                <option id="store-setup">Store Setup</option>
-                <option id="app-setup">App Integration</option>
-                <option id="custom-app">Custom App Development</option>
-              </select>
-            </div>
+            <Select
+              displayName="Project Type"
+              itemId="project-type"
+              name="projectType"
+              value={this.state.projectType.value}
+              onChange={this.onChange}
+              onBlur={this.onBlur}
+              options={[
+                { id: 'store-setup', value: 'Store Setup' },
+                { id: 'app-setup', value: 'App Integration' },
+                { id: 'custom-app', value: 'Custom App Development' },
+              ]}
+            />
             <Input
               displayName="Budget"
               inputId="budget"
