@@ -1,28 +1,84 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Button from './Button';
 import axios from 'axios';
+import validator from 'validator';
+import Button from './Button';
+
 import '../styles/ContactForm.css';
+
+const validate = (value, validatorList) => {
+  const isEmail = (value = '') =>
+    validator.isEmail(value) ? [] : ['Proper email is required'];
+  const isEmpty = (value = '') =>
+    validator.isEmpty(value) ? ['This field is required'] : [];
+
+  const validators = {
+    isEmail,
+    isEmpty,
+  };
+
+  return validatorList.reduce(
+    (memo, validator) => [...memo, validators[validator](value)],
+    []
+  );
+};
 
 class ContactForm extends Component {
   constructor() {
     super();
     this.state = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      company: '',
-      projectType: 'Store Setup',
-      budget: '',
-      projectDetails: '',
+      firstName: {
+        value: '',
+        validators: ['isEmpty'],
+        errors: [],
+      },
+      lastName: {
+        value: '',
+        validators: ['isEmpty'],
+        errors: [],
+      },
+      email: {
+        value: '',
+        validators: ['isEmpty', 'isEmail'],
+        errors: [],
+      },
+      company: {
+        value: '',
+        validators: [],
+        errors: [],
+      },
+      projectType: {
+        value: 'Store Setup',
+        validators: [],
+        errors: [],
+      },
+      budget: {
+        value: '',
+        validators: ['isEmpty'],
+        errors: [],
+      },
+      projectDetails: {
+        value: '',
+        validators: ['isEmpty'],
+        errors: [],
+      },
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onBlur = this.onBlur.bind(this);
   }
 
   onChange(e) {
     const { name, value } = e.target;
-    this.setState({ [name]: value });
+    const field = this.state[name];
+    this.setState({ [name]: { ...field, value } });
+  }
+
+  onBlur(e) {
+    const { name } = e.target;
+    const field = this.state[name];
+    const errors = validate(field.value, field.validators);
+    this.setState({ [name]: {...field, errors}})
   }
 
   onSubmit(e) {
@@ -38,12 +94,12 @@ class ContactForm extends Component {
     } = this.state;
 
     const subject = 'New Greysky.io Contact Request';
-    const text = `Name: ${firstName} ${lastName}\nEmail: ${email}\nCompany: ${company}\nProject Type: ${projectType}\nBudget: ${budget}\nProject Details: ${projectDetails}`;
+    const text = `Name: ${firstName.value} ${lastName.value}\nEmail: ${email.value}\nCompany: ${company.value}\nProject Type: ${projectType.value}\nBudget: ${budget.value}\nProject Details: ${projectDetails.value}`;
 
     axios
       .post('https://us-central1-greysky-io.cloudfunctions.net/sendMail', {
-       subject,
-       text
+        subject,
+        text,
       })
       .then(res => console.log('res', res))
       .catch(err => console.log('err', err));
@@ -61,15 +117,17 @@ class ContactForm extends Component {
                 id="first-name"
                 type="text"
                 name="firstName"
-                value={this.state.firstName}
+                value={this.state.firstName.value}
                 onChange={e => this.onChange(e)}
+                onBlur={e => this.onBlur(e)}
               />
             </div>
             <div className="form-item">
               <p className="text-body text-dark text-hairline">Last Name</p>
               <input
                 onChange={e => this.onChange(e)}
-                value={this.state.lastName}
+                onBlur={e => this.onBlur(e)}
+                value={this.state.lastName.value}
                 id="last-name"
                 name="lastName"
                 type="text"
@@ -79,7 +137,8 @@ class ContactForm extends Component {
               <p className="text-body text-dark text-hairline">Company</p>
               <input
                 onChange={e => this.onChange(e)}
-                value={this.state.company}
+                onBlur={e => this.onBlur(e)}
+                value={this.state.company.value}
                 id="company"
                 name="company"
                 type="text"
@@ -93,7 +152,8 @@ class ContactForm extends Component {
                 id="email"
                 name="email"
                 type="text"
-                value={this.state.email}
+                value={this.state.email.value}
+                onBlur={e => this.onBlur(e)}
                 onChange={e => this.onChange(e)}
               />
             </div>
@@ -104,8 +164,9 @@ class ContactForm extends Component {
               <select
                 id="project-type"
                 name="projectType"
-                value={this.state.projectType}
+                value={this.state.projectType.value}
                 onChange={e => this.onChange(e)}
+                onBlur={e => this.onBlur(e)}
                 type="text"
               >
                 <option id="store-setup">Store Setup</option>
@@ -118,8 +179,9 @@ class ContactForm extends Component {
               <input
                 id="budget"
                 name="budget"
-                value={this.state.budget}
+                value={this.state.budget.value}
                 onChange={e => this.onChange(e)}
+                onBlur={e => this.onBlur(e)}
                 type="text"
               />
             </div>
@@ -132,8 +194,9 @@ class ContactForm extends Component {
               <input
                 id="project-details"
                 name="projectDetails"
-                value={this.state.projectDetails}
+                value={this.state.projectDetails.value}
                 onChange={e => this.onChange(e)}
+                onBlur={e => this.onBlur(e)}
                 type="text"
               />
             </div>
