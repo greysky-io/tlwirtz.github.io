@@ -7,6 +7,7 @@ const SectionContent = props => {
     'section-container': true,
     'section-full-width': props.fullWidth,
     'section-no-padding': props.noPadding,
+    'tall': props.tall
   });
 
   return (

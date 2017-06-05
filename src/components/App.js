@@ -20,7 +20,7 @@ const App = props => {
     <div className="app-container">
       <div className="app-container-item main-background full-height">
         <NavBar />
-        <SectionContent fullWidth fullHeight>
+        <SectionContent fullWidth tall>
           <SectionContentItem padding>
             <h1 className="text-title text-reg text-white">
               <span className="text-reg">greysky </span>
