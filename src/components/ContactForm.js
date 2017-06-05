@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import AlertContainer from 'react-alert';
 import validator from 'validator';
 import Button from './Button';
 import Input from './Input';
@@ -71,10 +72,17 @@ class ContactForm extends Component {
     this.anyInvalid = this.anyInvalid.bind(this);
     this.validateAll = this.validateAll.bind(this);
     this.clearInputs = this.clearInputs.bind(this);
+    this.showAlert = this.showAlert.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onBlur = this.onBlur.bind(this);
   }
+
+  showAlert = () => {
+    this.msg.show(this.state.alertMsg, {
+      type: 'success',
+    });
+  };
 
   clearInputs() {
     const { inputs } = this.state;
@@ -159,10 +167,9 @@ class ContactForm extends Component {
       .then(res => {
         this.clearInputs();
         this.setState({
-          showAlert: true,
           alertMsg: 'Thank you for contacting us. We will be in touch shortly.',
         });
-          return setTimeout(() => this.setState({ showAlert: false, alertMsg: '' }), 5000);
+        this.showAlert();
       })
       .catch(err => console.log('err', err));
   }
@@ -291,11 +298,14 @@ class ContactForm extends Component {
                 Submit
               </p>
             </Button>
-            {this.state.showAlert
-              ? <p className="text-body text-reg text-dark">
-                  {this.state.alertMsg}
-                </p>
-              : null}
+            <AlertContainer
+              ref={a => (this.msg = a)}
+              offset={14}
+              position="bottom right"
+              theme="light"
+              time={5000}
+              transition="scale"
+            />
           </div>
         </form>
       </div>
