@@ -61,15 +61,15 @@ class NavBar extends Component {
       <div>
         {this.state.largeWindow
           ? <div className="app-nav-container">
-              <div className="app-nav-item logo">
-                <img src={gssLogo} alt="greysky studios logo" />
+              <div className="app-nav-item">
+                <img src={gssLogo} className="logo" alt="greysky studios logo" />
               </div>
               {this.renderGroup()}
             </div>
           : <div>
               <div className="app-nav-container">
                 <div className="app-nav-item logo">
-                  <img src={gssLogo} alt="greysky studios logo" />
+                  <img src={gssLogo} className="logo" alt="greysky studios logo" />
                 </div>
                 {this.renderCondensedButton()}
               </div>

@@ -109,8 +109,24 @@ hr {
   flex: 0;
 }
 
-.main-background {
+.logo {
+  max-height: 75px;
+}
+
+/*.main-background {
   background-image: linear-gradient(-135deg, #8600C6 5%, #6B00FF 100%);
+}*/
+
+.main-background {
+  background: linear-gradient(225deg, #8600c6, #6b00ff, #ff00a1);
+  background-size: 600% 600%;
+  animation: animated-background-gradient 10s ease infinite;
+}
+
+@keyframes animated-background-gradient { 
+    0%{background-position:99% 0%}
+    50%{background-position:2% 100%}
+    100%{background-position:99% 0%}
 }
 
 .blue-background {
