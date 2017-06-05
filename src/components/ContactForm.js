@@ -156,7 +156,14 @@ class ContactForm extends Component {
         subject,
         text,
       })
-      .then(res => this.clearInputs())
+      .then(res => {
+        this.clearInputs();
+        this.setState({
+          showAlert: true,
+          alertMsg: 'Thank you for contacting us. We will be in touch shortly.',
+        });
+          return setTimeout(() => this.setState({ showAlert: false, alertMsg: '' }), 5000);
+      })
       .catch(err => console.log('err', err));
   }
 
@@ -278,9 +285,18 @@ class ContactForm extends Component {
               }
             />
           </div>
-          <Button onClick={e => this.onSubmit(e)}>
-            <p className="text-body text-hairline text-white center">Submit</p>
-          </Button>
+          <div className="form-container">
+            <Button onClick={e => this.onSubmit(e)}>
+              <p className="text-body text-hairline text-white center">
+                Submit
+              </p>
+            </Button>
+            {this.state.showAlert
+              ? <p className="text-body text-reg text-dark">
+                  {this.state.alertMsg}
+                </p>
+              : null}
+          </div>
         </form>
       </div>
     );
