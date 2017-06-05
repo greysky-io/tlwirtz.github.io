@@ -29,59 +29,75 @@ class ContactForm extends Component {
   constructor() {
     super();
     this.state = {
-      firstName: {
-        value: '',
-        validators: ['isEmpty'],
-        errors: [],
-      },
-      lastName: {
-        value: '',
-        validators: ['isEmpty'],
-        errors: [],
-      },
-      email: {
-        value: '',
-        validators: ['isEmpty', 'isEmail'],
-        errors: [],
-      },
-      company: {
-        value: '',
-        validators: [],
-        errors: [],
-      },
-      projectType: {
-        value: 'Store Setup',
-        validators: [],
-        errors: [],
-      },
-      budget: {
-        value: '',
-        validators: ['isEmpty'],
-        errors: [],
-      },
-      projectDetails: {
-        value: '',
-        validators: ['isEmpty'],
-        errors: [],
+      inputs: {
+        firstName: {
+          value: '',
+          validators: ['isEmpty'],
+          errors: [],
+        },
+        lastName: {
+          value: '',
+          validators: ['isEmpty'],
+          errors: [],
+        },
+        email: {
+          value: '',
+          validators: ['isEmpty', 'isEmail'],
+          errors: [],
+        },
+        company: {
+          value: '',
+          validators: [],
+          errors: [],
+        },
+        projectType: {
+          value: 'Store Setup',
+          validators: [],
+          errors: [],
+        },
+        budget: {
+          value: '',
+          validators: ['isEmpty'],
+          errors: [],
+        },
+        projectDetails: {
+          value: '',
+          validators: ['isEmpty'],
+          errors: [],
+        },
       },
     };
     this.isInvalid = this.isInvalid.bind(this);
     this.anyInvalid = this.anyInvalid.bind(this);
     this.validateAll = this.validateAll.bind(this);
+    this.clearInputs = this.clearInputs.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onBlur = this.onBlur.bind(this);
   }
 
+  clearInputs() {
+    const { inputs } = this.state;
+    Object.keys(inputs).map(key => {
+      if (key === 'projectType') {
+        inputs[key].value = 'Store Setup';
+      } else {
+        inputs[key].value = '';
+      }
+    });
+
+    this.setState({ inputs });
+  }
+
   validateAll() {
-    const state = this.state;
+    const state = this.state.inputs;
     Object.keys(state).map(key => {
       const field = state[key];
       const errors = validate(field.value, field.validators);
       state[key] = { ...field, errors };
     });
 
-    this.setState(state);
+    this.setState({ inputs: state });
   }
 
   isInvalid(errors) {
@@ -89,22 +105,32 @@ class ContactForm extends Component {
   }
 
   anyInvalid() {
-    return Object.keys(this.state)
-      .map(key => this.state[key].errors)
+    return Object.keys(this.state.inputs)
+      .map(key => this.state.inputs[key].errors)
       .reduce((prev, curr) => prev || this.isInvalid(curr), false);
   }
 
   onChange(e) {
     const { name, value } = e.target;
-    const field = this.state[name];
-    this.setState({ [name]: { ...field, value } });
+    const field = this.state.inputs[name];
+    this.setState({
+      inputs: {
+        ...this.state.inputs,
+        [name]: { ...field, value },
+      },
+    });
   }
 
   onBlur(e) {
     const { name } = e.target;
-    const field = this.state[name];
+    const field = this.state.inputs[name];
     const errors = validate(field.value, field.validators);
-    this.setState({ [name]: { ...field, errors } });
+    this.setState({
+      inputs: {
+        ...this.state.inputs,
+        [name]: { ...field, errors },
+      },
+    });
   }
 
   onSubmit(e) {
@@ -120,7 +146,7 @@ class ContactForm extends Component {
       projectType,
       budget,
       projectDetails,
-    } = this.state;
+    } = this.state.inputs;
 
     const subject = 'New Greysky.io Contact Request';
     const text = `Name: ${firstName.value} ${lastName.value}\nEmail: ${email.value}\nCompany: ${company.value}\nProject Type: ${projectType.value}\nBudget: ${budget.value}\nProject Details: ${projectDetails.value}`;
@@ -130,7 +156,7 @@ class ContactForm extends Component {
         subject,
         text,
       })
-      .then(res => console.log('res', res))
+      .then(res => this.clearInputs())
       .catch(err => console.log('err', err));
   }
 
@@ -145,13 +171,13 @@ class ContactForm extends Component {
               inputId="first-name"
               type="text"
               name="firstName"
-              value={this.state.firstName.value}
+              value={this.state.inputs.firstName.value}
               onChange={this.onChange}
               onBlur={this.onBlur}
-              isInvalid={this.isInvalid(this.state.firstName.errors)}
+              isInvalid={this.isInvalid(this.state.inputs.firstName.errors)}
               invalidMsg={
-                this.isInvalid(this.state.firstName.errors)
-                  ? this.state.firstName.errors[0]
+                this.isInvalid(this.state.inputs.firstName.errors)
+                  ? this.state.inputs.firstName.errors[0]
                   : ''
               }
             />
@@ -160,13 +186,13 @@ class ContactForm extends Component {
               inputId="last-name"
               type="text"
               name="lastName"
-              value={this.state.lastName.value}
+              value={this.state.inputs.lastName.value}
               onChange={this.onChange}
               onBlur={this.onBlur}
-              isInvalid={this.isInvalid(this.state.lastName.errors)}
+              isInvalid={this.isInvalid(this.state.inputs.lastName.errors)}
               invalidMsg={
-                this.isInvalid(this.state.lastName.errors)
-                  ? this.state.lastName.errors[0]
+                this.isInvalid(this.state.inputs.lastName.errors)
+                  ? this.state.inputs.lastName.errors[0]
                   : ''
               }
             />
@@ -175,13 +201,13 @@ class ContactForm extends Component {
               inputId="company"
               type="text"
               name="company"
-              value={this.state.company.value}
+              value={this.state.inputs.company.value}
               onChange={this.onChange}
               onBlur={this.onBlur}
-              isInvalid={this.isInvalid(this.state.company.errors)}
+              isInvalid={this.isInvalid(this.state.inputs.company.errors)}
               invalidMsg={
-                this.isInvalid(this.state.company.errors)
-                  ? this.state.company.errors[0]
+                this.isInvalid(this.state.inputs.company.errors)
+                  ? this.state.inputs.company.errors[0]
                   : ''
               }
             />
@@ -192,13 +218,13 @@ class ContactForm extends Component {
               inputId="email"
               type="text"
               name="email"
-              value={this.state.email.value}
+              value={this.state.inputs.email.value}
               onChange={this.onChange}
               onBlur={this.onBlur}
-              isInvalid={this.isInvalid(this.state.email.errors)}
+              isInvalid={this.isInvalid(this.state.inputs.email.errors)}
               invalidMsg={
-                this.isInvalid(this.state.email.errors)
-                  ? this.state.email.errors[0]
+                this.isInvalid(this.state.inputs.email.errors)
+                  ? this.state.inputs.email.errors[0]
                   : ''
               }
             />
@@ -208,7 +234,7 @@ class ContactForm extends Component {
               displayName="Project Type"
               itemId="project-type"
               name="projectType"
-              value={this.state.projectType.value}
+              value={this.state.inputs.projectType.value}
               onChange={this.onChange}
               onBlur={this.onBlur}
               options={[
@@ -222,13 +248,13 @@ class ContactForm extends Component {
               inputId="budget"
               type="text"
               name="budget"
-              value={this.state.budget.value}
+              value={this.state.inputs.budget.value}
               onChange={this.onChange}
               onBlur={this.onBlur}
-              isInvalid={this.isInvalid(this.state.budget.errors)}
+              isInvalid={this.isInvalid(this.state.inputs.budget.errors)}
               invalidMsg={
-                this.isInvalid(this.state.budget.errors)
-                  ? this.state.budget.errors[0]
+                this.isInvalid(this.state.inputs.budget.errors)
+                  ? this.state.inputs.budget.errors[0]
                   : ''
               }
             />
@@ -239,13 +265,15 @@ class ContactForm extends Component {
               inputId="project-details"
               type="text"
               name="projectDetails"
-              value={this.state.projectDetails.value}
+              value={this.state.inputs.projectDetails.value}
               onChange={this.onChange}
               onBlur={this.onBlur}
-              isInvalid={this.isInvalid(this.state.projectDetails.errors)}
+              isInvalid={this.isInvalid(
+                this.state.inputs.projectDetails.errors
+              )}
               invalidMsg={
-                this.isInvalid(this.state.projectDetails.errors)
-                  ? this.state.projectDetails.errors[0]
+                this.isInvalid(this.state.inputs.projectDetails.errors)
+                  ? this.state.inputs.projectDetails.errors[0]
                   : ''
               }
             />
