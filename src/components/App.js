@@ -7,6 +7,7 @@ import InfoCard from './InfoCard';
 import Button from './Button';
 import ContactForm from './ContactForm';
 import Footer from './Footer';
+import Text from './Text';
 
 import greyskyLogo from '../assets/greysky-logo.svg';
 import shopifyLogo from '../assets/shopify_monotone_white.svg';
@@ -22,37 +23,34 @@ const App = props => {
         <NavBar />
         <SectionContent fullWidth tall>
           <SectionContentItem padding>
-            <h1 className="text-title text-reg text-white">
+            <Text title color="white">
               <span className="text-reg">greysky </span>
               <span className="text-hairline">studios</span>
-            </h1>
-            <h2 className="text-subheading text-light text-white">
+            </Text>
+            <Text subheading color="white">
               Mind-blowing e-commerce for your business
-            </h2>
+            </Text>
           </SectionContentItem>
         </SectionContent>
       </div>
       <div className="app-container-item">
         <SectionContent>
           <SectionContentItem>
-            <h2 className="text-headline text-dark text-light left text-margin-bottom">
+            <Text heading position="left" bottomMargin>
               Let us help accelerate your business
-            </h2>
-            <p className="text-body text-dark text-light left text-margin-bottom">
+            </Text>
+            <Text body position="left" bottomMargin>
               We're here to help. Whether you're looking to launch your first online store, or need help fine-tuning your back-office processing we can craft the right solution for your business.
-            </p>
-            <p className="text-body text-dark text-light left">
+            </Text>
+            <Text body position="left">
               We specialize in creating brand new Shopify stores, off the shelf app integrations and custom app development.
-            </p>
+            </Text>
           </SectionContentItem>
           <SectionContentItem>
             <SectionContent noPadding>
               <SectionContentItem>
-                <img
-                  src={rocket}
-                  className="service-icon service-icon-large"
-                />
-                </SectionContentItem>
+                <img src={rocket} className="service-icon service-icon-large" />
+              </SectionContentItem>
             </SectionContent>
           </SectionContentItem>
         </SectionContent>
@@ -60,14 +58,14 @@ const App = props => {
       <div className="app-container-item main-background">
         <SectionContent>
           <SectionContentItem>
-            <h2 className="text-white text-reg text-title center">
+            <Text title position="center" weight="reg" color="white">
               we
-            </h2>
+            </Text>
           </SectionContentItem>
           <SectionContentItem>
-            <h2 className="text-white text-reg text-title center">
+            <Text title position="center" weight="reg" color="white">
               <i className="fa fa-heart" />
-            </h2>
+            </Text>
           </SectionContentItem>
           <SectionContentItem>
             <SectionContent noPadding>
@@ -77,34 +75,34 @@ const App = props => {
         </SectionContent>
         <SectionContent>
           <SectionContentItem padding flexStart>
-            <h2 className="text-headline text-white text-light center text-margin-bottom">
+            <Text heading color="white" position="center">
               Ecommerce done right.
-            </h2>
-            <p className="text-body text-white text-light center text-margin-bottom">
+            </Text>
+            <Text body color="white" position="center" bottomMargin>
               Shopify is what e-commerce was meant to be.
               <br />
               The all-in-one platform has everything you need to help you run your business.
-            </p>
+            </Text>
           </SectionContentItem>
           <SectionContentItem padding flexStart>
-            <h2 className="text-headline text-white text-light center text-margin-bottom">
+            <Text heading color="white" position="center" bottomMargin>
               Manage your business with ease.
-            </h2>
-            <p className="text-body text-white text-light center text-margin-bottom">
+            </Text>
+            <Text body color="white" position="center" bottomMargin>
               Manage orders & payments, track sales trends, run marketing campaigns all from within the Shopify system.
               <br />
               Join the 350,000+ merchants who run their business on Shopify.
-            </p>
+            </Text>
           </SectionContentItem>
           <SectionContentItem padding flexStart>
-            <h2 className="text-headline text-white text-light center text-margin-bottom">
+            <Text heading color="white" position="center" bottomMargin>
               Beautiful storefronts. Mobile ready.
-            </h2>
-            <p className="text-body text-white text-light center text-margin-bottom">
+            </Text>
+            <Text body color="white" position="center" bottomMargin>
               With hundreds of robust themes, your products will look beautiful whether on mobile, tablet or desktop.
               <br />
               All themes are fully customizable, no coding required.
-            </p>
+            </Text>
           </SectionContentItem>
         </SectionContent>
       </div>
@@ -113,43 +111,43 @@ const App = props => {
           <SectionContentItem flexStart>
             <InfoCard>
               <img src={editIcon} className="service-icon" />
-              <h2 className="text-headline text-dark text-light center  info-card-item">
+              <Text heading position="center" infoCard>
                 Store Modification
-              </h2>
-              <p className="text-body text-dark text-light center info-card-item">
+              </Text>
+              <Text body position="center" infoCard>
                 Already have a Shopify store, but need help making modifications? This package is for you.
-              </p>
-              <p className="text-body text-purple text-light center">
+              </Text>
+              <Text body color="purple" position="center">
                 Starts at $500
-              </p>
+              </Text>
             </InfoCard>
           </SectionContentItem>
           <SectionContentItem flexStart>
             <InfoCard>
               <img src={openSign} className="service-icon" />
-              <h2 className="text-headline text-dark text-light center info-card-item">
+              <Text heading position="center" infoCard>
                 Store Setup
-              </h2>
-              <p className="text-body text-dark text-light center info-card-item">
+              </Text>
+              <Text body position="center" infoCard>
                 Everything you need to get your business selling online.
-              </p>
-              <p className="text-body text-purple text-light center ">
+              </Text>
+              <Text body color="purple" position="center">
                 Starts at $2,500
-              </p>
+              </Text>
             </InfoCard>
           </SectionContentItem>
           <SectionContentItem flexStart>
             <InfoCard>
               <img src={customIcon} className="service-icon" />
-              <h2 className="text-headline text-dark text-light center info-card-item">
+              <Text heading position="center" infoCard>
                 Custom App Development
-              </h2>
-              <p className="text-body text-dark text-light center info-card-item">
+              </Text>
+              <Text body position="center" infoCard>
                 Need a custom app tailored specifically to your business needs? We're here to help.
-              </p>
-              <p className="text-body text-purple text-light center">
+              </Text>
+              <Text body color="purple" position="center">
                 Starts at $5,000
-              </p>
+              </Text>
             </InfoCard>
           </SectionContentItem>
         </SectionContent>
@@ -157,7 +155,6 @@ const App = props => {
       <div className="app-container-item">
         <SectionContent>
           <SectionContentItem>
-            {/*We are going to try to use cloud functions for this*/}
             <ContactForm />
           </SectionContentItem>
         </SectionContent>
