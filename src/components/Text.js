@@ -13,6 +13,7 @@ const Text = props => {
     position,
     bottomMargin,
     infoCard,
+    nav,
     children,
   } = props;
 
@@ -25,7 +26,8 @@ const Text = props => {
       'text-headline': heading,
       'text-subheading': subheading,
       'text-title': title,
-      'info-card-item': infoCard
+      'info-card-item': infoCard,
+      nav: nav,
     },
     fontWeight,
     fontColor,
