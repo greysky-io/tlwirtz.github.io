@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Text from './Text';
 
 const Input = props => {
   const {
@@ -15,7 +16,7 @@ const Input = props => {
   } = props;
   return (
     <div className="form-item">
-      <p className="text-body text-dark text-hairline">{displayName}</p>
+      <Text body>{displayName}</Text>
       <input
         id={inputId}
         type={type}
@@ -26,9 +27,9 @@ const Input = props => {
         className={isInvalid ? 'input-error' : ''}
       />
       {isInvalid
-        ? <p className="text-body text-dark text-light text-error">
+        ? <Text body error>
             {invalidMsg}
-          </p>
+          </Text>
         : null}
     </div>
   );

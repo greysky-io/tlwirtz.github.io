@@ -6,6 +6,7 @@ import validator from 'validator';
 import Button from './Button';
 import Input from './Input';
 import Select from './Select';
+import Text from './Text';
 
 import '../styles/ContactForm.css';
 
@@ -294,9 +295,9 @@ class ContactForm extends Component {
           </div>
           <div className="form-container">
             <Button onClick={e => this.onSubmit(e)}>
-              <p className="text-body text-hairline text-white center">
+              <Text body color="white" position="center">
                 Submit
-              </p>
+              </Text>
             </Button>
             <AlertContainer
               ref={a => (this.msg = a)}

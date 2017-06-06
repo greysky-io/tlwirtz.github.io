@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Text from './Text';
 
 const NavButton = props => {
   return (
     <div onClick={e => props.handleClick(e)}>
-      <p className="text-white text-hairline text-headline nav">
+      <Text color="white" weight="hairline" heading nav>
         <i className="fa fa-angle-down" aria-hidden="true" />
-      </p>
+      </Text>
     </div>
   );
 };
