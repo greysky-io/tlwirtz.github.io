@@ -1,0 +1,14 @@
+.info-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em;
+  margin: 0.25em;
+  height: 100%;
+}
+
+.info-card-item {
+  flex: auto;
+  padding-bottom: 0.5em;
+}

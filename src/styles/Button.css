@@ -1,0 +1,24 @@
+.primary-button {
+  background: #6500FF;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  padding: 0.5em;
+  margin: 0.5em;
+  min-width: 150px;
+  max-width: 150px;
+  align-items: center;
+  justify-content: center;
+  max-height: 30px;
+  cursor: pointer;
+  
+}
+
+.primary-button:hover {
+  background: rgba(101, 0, 255, 0.8)
+}
+
+.primary-button > p {
+  margin: 0;
+  flex: auto;
+  align-self: center;
+}
