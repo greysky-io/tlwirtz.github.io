@@ -16,6 +16,7 @@ const Text = props => {
     nav,
     error,
     children,
+    small
   } = props;
 
   const fontWeight = weight ? `text-${weight}` : 'text-light';
@@ -26,6 +27,7 @@ const Text = props => {
       'text-body': body,
       'text-headline': heading,
       'text-subheading': subheading,
+      'text-small': small,
       'text-title': title,
       'info-card-item': infoCard,
       'text-error': error,
