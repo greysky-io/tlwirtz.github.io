@@ -12,6 +12,7 @@
     "react": "^15.5.4",
     "react-alert": "^2.0.1",
     "react-dom": "^15.5.4",
+    "react-scrollable-anchor": "^0.4.2",
     "validator": "^7.0.0"
   },
   "scripts": {
