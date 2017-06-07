@@ -52,7 +52,13 @@ class NavBar extends Component {
 
   renderGroup() {
     return this.showNavLinks()
-      ? <NavLinkGroup values={['services', 'about', 'get in touch']} />
+      ? <NavLinkGroup
+          values={[
+            { name: 'services', id: 'services' },
+            { name: 'about', id: 'about' },
+            { name: 'get in touch', id: 'get-in-touch' },
+          ]}
+        />
       : null;
   }
 
@@ -62,14 +68,22 @@ class NavBar extends Component {
         {this.state.largeWindow
           ? <div className="app-nav-container">
               <div className="app-nav-item">
-                <img src={gssLogo} className="logo" alt="greysky studios logo" />
+                <img
+                  src={gssLogo}
+                  className="logo"
+                  alt="greysky studios logo"
+                />
               </div>
               {this.renderGroup()}
             </div>
           : <div>
               <div className="app-nav-container">
                 <div className="app-nav-item logo">
-                  <img src={gssLogo} className="logo" alt="greysky studios logo" />
+                  <img
+                    src={gssLogo}
+                    className="logo"
+                    alt="greysky studios logo"
+                  />
                 </div>
                 {this.renderCondensedButton()}
               </div>
