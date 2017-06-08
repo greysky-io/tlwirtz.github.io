@@ -10,6 +10,12 @@ const Button = ({ onClick = e => null, ...props }) => {
   );
 };
 
-Button.propTypes = {};
+Button.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+    PropTypes.string,
+  ]).isRequired,
+};
 
 export default Button;

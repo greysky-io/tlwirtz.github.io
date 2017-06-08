@@ -14,6 +14,9 @@ const NavLink = props => {
   );
 };
 
-NavLink.propTypes = {};
+NavLink.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
+  name: PropTypes.string.isRequired,
+};
 
 export default NavLink;

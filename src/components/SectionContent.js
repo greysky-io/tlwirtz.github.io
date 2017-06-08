@@ -17,6 +17,15 @@ const SectionContent = props => {
   );
 };
 
-SectionContent.propTypes = {};
+SectionContent.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+    PropTypes.string,
+  ]).isRequired,
+  fullWidth: PropTypes.bool,
+  noPadding: PropTypes.bool,
+  tall: PropTypes.bool
+};
 
 export default SectionContent;

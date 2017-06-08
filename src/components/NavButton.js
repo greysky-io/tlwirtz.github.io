@@ -12,6 +12,8 @@ const NavButton = props => {
   );
 };
 
-NavButton.propTypes = {};
+NavButton.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+};
 
 export default NavButton;

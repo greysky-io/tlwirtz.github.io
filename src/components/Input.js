@@ -14,6 +14,7 @@ const Input = props => {
     invalidMsg,
     displayName,
   } = props;
+
   return (
     <div className="form-item">
       <Text body>{displayName}</Text>
@@ -35,6 +36,20 @@ const Input = props => {
   );
 };
 
-Input.propTypes = {};
+Input.propTypes = {
+  inputId: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool,
+    PropTypes.number,
+  ]).isRequired,
+  onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
+  isInvalid: PropTypes.bool,
+  invalidMsg: PropTypes.string,
+  displayName: PropTypes.string,
+};
 
 export default Input;

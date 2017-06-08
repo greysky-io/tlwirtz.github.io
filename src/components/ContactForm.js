@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import AlertContainer from 'react-alert';
 import validator from 'validator';
@@ -89,13 +88,13 @@ class ContactForm extends Component {
     const { inputs } = this.state;
     Object.keys(inputs).map(key => {
       if (key === 'projectType') {
-        inputs[key].value = 'Store Setup';
+        return inputs[key].value = 'Store Setup';
       } else {
-        inputs[key].value = '';
+        return inputs[key].value = '';
       }
     });
 
-    this.setState({ inputs });
+    return this.setState({ inputs });
   }
 
   validateAll() {
@@ -103,10 +102,10 @@ class ContactForm extends Component {
     Object.keys(state).map(key => {
       const field = state[key];
       const errors = validate(field.value, field.validators);
-      state[key] = { ...field, errors };
+      return state[key] = { ...field, errors };
     });
 
-    this.setState({ inputs: state });
+    return this.setState({ inputs: state });
   }
 
   isInvalid(errors) {
@@ -313,7 +312,5 @@ class ContactForm extends Component {
     );
   }
 }
-
-ContactForm.propTypes = {};
 
 export default ContactForm;

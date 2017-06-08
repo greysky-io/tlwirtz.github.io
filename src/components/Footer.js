@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import SectionContent from './SectionContent';
 import SectionContentItem from './SectionContentItem';
 import Text from './Text';
@@ -30,7 +29,5 @@ const Footer = props => {
     </div>
   );
 };
-
-Footer.propTypes = {};
 
 export default Footer;
