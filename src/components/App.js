@@ -5,12 +5,10 @@ import NavBar from './NavBar';
 import SectionContent from './SectionContent';
 import SectionContentItem from './SectionContentItem';
 import InfoCard from './InfoCard';
-import Button from './Button';
 import ContactForm from './ContactForm';
 import Footer from './Footer';
 import Text from './Text';
 
-import greyskyLogo from '../assets/greysky-logo.svg';
 import shopifyLogo from '../assets/shopify_monotone_white.svg';
 import editIcon from '../assets/edit-icon.svg';
 import openSign from '../assets/open-sign.svg';
@@ -55,6 +53,7 @@ const App = props => {
                     <img
                       src={rocket}
                       className="service-icon service-icon-large"
+                      alt=""
                     />
                   </SectionContentItem>
                 </SectionContent>
@@ -75,7 +74,7 @@ const App = props => {
               </SectionContentItem>
               <SectionContentItem>
                 <SectionContent noPadding>
-                  <img src={shopifyLogo} />
+                  <img src={shopifyLogo} alt=""/>
                 </SectionContent>
               </SectionContentItem>
             </SectionContent>
@@ -116,7 +115,7 @@ const App = props => {
             <SectionContent>
               <SectionContentItem flexStart>
                 <InfoCard>
-                  <img src={editIcon} className="service-icon" />
+                  <img src={editIcon} className="service-icon" alt=""/>
                   <Text heading position="center" infoCard>
                     Store Modification
                   </Text>
@@ -130,7 +129,7 @@ const App = props => {
               </SectionContentItem>
               <SectionContentItem flexStart>
                 <InfoCard>
-                  <img src={openSign} className="service-icon" />
+                  <img src={openSign} className="service-icon" alt=""/>
                   <Text heading position="center" infoCard>
                     Store Setup
                   </Text>
@@ -144,7 +143,7 @@ const App = props => {
               </SectionContentItem>
               <SectionContentItem flexStart>
                 <InfoCard>
-                  <img src={customIcon} className="service-icon" />
+                  <img src={customIcon} className="service-icon" alt=""/>
                   <Text heading position="center" infoCard>
                     Custom App Development
                   </Text>
