@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import ScrollToAnchor from './ScrollToAnchor';
 import NavBar from './NavBar';
 import SectionContent from './SectionContent';
@@ -172,7 +171,5 @@ const App = props => {
     </Router>
   );
 };
-
-App.propTypes = {};
 
 export default App;

@@ -38,8 +38,8 @@ const Input = props => {
 
 Input.propTypes = {
   inputId: PropTypes.string.isRequired,
-  type: PropTypes.string,
-  name: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.bool,
