@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import jump from 'jump.js'
@@ -26,6 +26,16 @@ class ScrollToAnchor extends Component {
   }
 }
 
-ScrollToAnchor.propTypes = {};
+ScrollToAnchor.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+    PropTypes.string,
+  ]).isRequired,
+  duration: PropTypes.number,
+  offset: PropTypes.number,
+  callback: PropTypes.func,
+  a11y: PropTypes.bool
+};
 
 export default withRouter(ScrollToAnchor);

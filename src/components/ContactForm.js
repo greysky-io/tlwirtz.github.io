@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import AlertContainer from 'react-alert';
 import validator from 'validator';
@@ -95,7 +94,7 @@ class ContactForm extends Component {
       }
     });
 
-    this.setState({ inputs });
+    return this.setState({ inputs });
   }
 
   validateAll() {
@@ -106,7 +105,7 @@ class ContactForm extends Component {
       state[key] = { ...field, errors };
     });
 
-    this.setState({ inputs: state });
+    return this.setState({ inputs: state });
   }
 
   isInvalid(errors) {
@@ -313,7 +312,5 @@ class ContactForm extends Component {
     );
   }
 }
-
-ContactForm.propTypes = {};
 
 export default ContactForm;

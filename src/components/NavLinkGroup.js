@@ -5,11 +5,15 @@ import NavLink from './NavLink';
 const NavLinkGroup = props => {
   return (
     <div className="app-nav-group">
-      {props.values.map((value, idx) => <NavLink key={idx} name={value.name} id={value.id} />)}
+      {props.values.map((value, idx) => (
+        <NavLink key={idx} name={value.name} id={value.id} />
+      ))}
     </div>
   );
 };
 
-NavLinkGroup.propTypes = {};
+NavLinkGroup.propTypes = {
+  values: PropTypes.array.isRequired,
+};
 
 export default NavLinkGroup;

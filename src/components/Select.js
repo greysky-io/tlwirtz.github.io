@@ -21,6 +21,14 @@ const Select = props => {
   );
 };
 
-Select.propTypes = {};
+Select.propTypes = {
+  itemId: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
+  options: PropTypes.arrayOf(PropTypes.object).isRequired,
+  displayName: PropTypes.string,
+};
 
 export default Select;

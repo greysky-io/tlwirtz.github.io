@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import NavButton from './NavButton';
 import NavLinkGroup from './NavLinkGroup';
 import gssLogo from '../assets/greysky-logo.svg';
@@ -95,7 +94,5 @@ class NavBar extends Component {
     );
   }
 }
-
-NavBar.propTypes = {};
 
 export default NavBar;

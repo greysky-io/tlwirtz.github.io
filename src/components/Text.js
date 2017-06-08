@@ -16,7 +16,7 @@ const Text = props => {
     nav,
     error,
     children,
-    small
+    small,
   } = props;
 
   const fontWeight = weight ? `text-${weight}` : 'text-light';
@@ -54,6 +54,24 @@ const Text = props => {
   return buildComponent(textClasses);
 };
 
-Text.propTypes = {};
+Text.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+    PropTypes.string,
+  ]).isRequired,
+  title: PropTypes.bool,
+  heading: PropTypes.bool,
+  subheading: PropTypes.bool,
+  body: PropTypes.bool,
+  color: PropTypes.oneOf(['dark', 'white', 'purple']),
+  weight: PropTypes.oneOf(['light', 'reg', 'hairline']),
+  position: PropTypes.oneOf(['center', 'left', 'right']),
+  bottomMargin: PropTypes.bool,
+  infoCard: PropTypes.bool,
+  nav: PropTypes.bool,
+  error: PropTypes.bool,
+  small: PropTypes.bool,
+};
 
 export default Text;
