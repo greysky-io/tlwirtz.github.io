@@ -82,6 +82,11 @@
 .text-margin-bottom {
   margin-bottom: 0.5em;
 }
+
+.footer-right {
+  text-align: center;
+}
+
 .nav:hover {
   color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
@@ -90,5 +95,9 @@
 @media screen and (min-width: 660px) {
   .text-partial-width {
     margin: 0;
+  }
+
+  .footer-right {
+    text-align: right;
   }
 }

@@ -17,11 +17,13 @@ const Text = props => {
     error,
     children,
     small,
+    footerRight,
   } = props;
 
   const fontWeight = weight ? `text-${weight}` : 'text-light';
   const fontColor = color ? `text-${color}` : 'text-dark';
   const extraMargin = bottomMargin ? 'text-margin-bottom' : null;
+  const right = footerRight ? 'footer-right' : null;
   const textClasses = classnames(
     {
       'text-body': body,
@@ -36,7 +38,8 @@ const Text = props => {
     fontWeight,
     fontColor,
     extraMargin,
-    position
+    position,
+    right
   );
 
   const buildComponent = classes => {
@@ -72,6 +75,7 @@ Text.propTypes = {
   nav: PropTypes.bool,
   error: PropTypes.bool,
   small: PropTypes.bool,
+  footerRight: PropTypes.bool,
 };
 
 export default Text;
