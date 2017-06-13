@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import className from 'classnames';
 
-const SectionContent = props => {
+const Content = props => {
   const containerClass = className({
     'section-container': true,
     'section-full-width': props.fullWidth,
@@ -17,7 +17,7 @@ const SectionContent = props => {
   );
 };
 
-SectionContent.propTypes = {
+Content.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -28,4 +28,4 @@ SectionContent.propTypes = {
   tall: PropTypes.bool
 };
 
-export default SectionContent;
+export default Content;
