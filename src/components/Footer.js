@@ -1,21 +1,21 @@
 import React from 'react';
-import SectionContent from './SectionContent';
-import SectionContentItem from './SectionContentItem';
+import Content from './Content';
+import Item from './Item';
 import Text from './Text';
 
 const Footer = props => {
   return (
     <div className="app-container-item main-background">
-      <SectionContent>
-        <SectionContentItem>
+      <Content>
+        <Item>
           <Text small  color="white" bottomMargin>
             Greysky Studios - Seattle, WA
           </Text>
           <Text small  color="white">
             Copyright © 2017 - All rights reserved
           </Text>
-        </SectionContentItem>
-        <SectionContentItem>
+        </Item>
+        <Item>
           <Text small nav color="white" bottomMargin footerRight>
             <a className="text-white" href="https://twitter.com/greyskyio">
               <i className="fa fa-twitter fa-lg" />
@@ -24,8 +24,8 @@ const Footer = props => {
           <a href="mailto:contact@greysky.io">
             <Text small  color="white" footerRight>contact@greysky.io</Text>
           </a>
-        </SectionContentItem>
-      </SectionContent>
+        </Item>
+      </Content>
     </div>
   );
 };

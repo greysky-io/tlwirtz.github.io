@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import className from 'classnames';
 
-const SectionContentItem = props => {
+const Item = props => {
   const itemClass = className({
     'section-item': true,
     'section-padding': props.padding,
@@ -16,7 +16,7 @@ const SectionContentItem = props => {
   );
 };
 
-SectionContentItem.propTypes = {
+Item.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -26,4 +26,4 @@ SectionContentItem.propTypes = {
   flexStart: PropTypes.bool,
 };
 
-export default SectionContentItem;
+export default Item;

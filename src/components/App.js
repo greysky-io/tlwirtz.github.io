@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ScrollToAnchor from './ScrollToAnchor';
 import NavBar from './NavBar';
-import SectionContent from './SectionContent';
-import SectionContentItem from './SectionContentItem';
+import Content from './Content';
+import Item from './Item';
 import InfoCard from './InfoCard';
 import ContactForm from './ContactForm';
 import Footer from './Footer';
@@ -22,8 +22,8 @@ const App = props => {
         <div className="app-container">
           <div className="app-container-item main-background full-height">
             <NavBar />
-            <SectionContent fullWidth tall>
-              <SectionContentItem padding>
+            <Content fullWidth tall>
+              <Item padding>
                 <Text title color="white">
                   <span className="text-reg">greysky </span>
                   <span className="text-hairline">studios</span>
@@ -31,12 +31,12 @@ const App = props => {
                 <Text subheading color="white">
                   Mind-blowing e-commerce for your business
                 </Text>
-              </SectionContentItem>
-            </SectionContent>
+              </Item>
+            </Content>
           </div>
           <div id="about" className="app-container-item">
-            <SectionContent>
-              <SectionContentItem>
+            <Content>
+              <Item>
                 <Text heading position="left" bottomMargin>
                   Let us help accelerate your business
                 </Text>
@@ -46,40 +46,40 @@ const App = props => {
                 <Text body position="left">
                   We specialize in creating brand new Shopify stores, off the shelf app integrations and custom app development.
                 </Text>
-              </SectionContentItem>
-              <SectionContentItem>
-                <SectionContent noPadding>
-                  <SectionContentItem>
+              </Item>
+              <Item>
+                <Content noPadding>
+                  <Item>
                     <img
                       src={rocket}
                       className="service-icon service-icon-large"
                       alt=""
                     />
-                  </SectionContentItem>
-                </SectionContent>
-              </SectionContentItem>
-            </SectionContent>
+                  </Item>
+                </Content>
+              </Item>
+            </Content>
           </div>
           <div className="app-container-item main-background">
-            <SectionContent>
-              <SectionContentItem>
+            <Content>
+              <Item>
                 <Text title position="center" weight="reg" color="white">
                   we
                 </Text>
-              </SectionContentItem>
-              <SectionContentItem>
+              </Item>
+              <Item>
                 <Text title position="center" weight="reg" color="white">
                   <i className="fa fa-heart" />
                 </Text>
-              </SectionContentItem>
-              <SectionContentItem>
-                <SectionContent noPadding>
+              </Item>
+              <Item>
+                <Content noPadding>
                   <img src={shopifyLogo} alt=""/>
-                </SectionContent>
-              </SectionContentItem>
-            </SectionContent>
-            <SectionContent>
-              <SectionContentItem padding flexStart>
+                </Content>
+              </Item>
+            </Content>
+            <Content>
+              <Item padding flexStart>
                 <Text heading color="white" position="center">
                   Ecommerce done right.
                 </Text>
@@ -88,8 +88,8 @@ const App = props => {
                   <br />
                   The all-in-one platform has everything you need to help you run your business.
                 </Text>
-              </SectionContentItem>
-              <SectionContentItem padding flexStart>
+              </Item>
+              <Item padding flexStart>
                 <Text heading color="white" position="center" bottomMargin>
                   Manage your business with ease.
                 </Text>
@@ -98,8 +98,8 @@ const App = props => {
                   <br />
                   Join the 350,000+ merchants who run their business on Shopify.
                 </Text>
-              </SectionContentItem>
-              <SectionContentItem padding flexStart>
+              </Item>
+              <Item padding flexStart>
                 <Text heading color="white" position="center" bottomMargin>
                   Beautiful storefronts. Mobile ready.
                 </Text>
@@ -108,12 +108,12 @@ const App = props => {
                   <br />
                   All themes are fully customizable, no coding required.
                 </Text>
-              </SectionContentItem>
-            </SectionContent>
+              </Item>
+            </Content>
           </div>
           <div id="services" className="app-container-item">
-            <SectionContent>
-              <SectionContentItem flexStart>
+            <Content>
+              <Item flexStart>
                 <InfoCard>
                   <img src={editIcon} className="service-icon" alt=""/>
                   <Text heading position="center" infoCard>
@@ -126,8 +126,8 @@ const App = props => {
                     Starts at $500
                   </Text>
                 </InfoCard>
-              </SectionContentItem>
-              <SectionContentItem flexStart>
+              </Item>
+              <Item flexStart>
                 <InfoCard>
                   <img src={openSign} className="service-icon" alt=""/>
                   <Text heading position="center" infoCard>
@@ -140,8 +140,8 @@ const App = props => {
                     Starts at $2,500
                   </Text>
                 </InfoCard>
-              </SectionContentItem>
-              <SectionContentItem flexStart>
+              </Item>
+              <Item flexStart>
                 <InfoCard>
                   <img src={customIcon} className="service-icon" alt=""/>
                   <Text heading position="center" infoCard>
@@ -154,15 +154,15 @@ const App = props => {
                     Starts at $5,000
                   </Text>
                 </InfoCard>
-              </SectionContentItem>
-            </SectionContent>
+              </Item>
+            </Content>
           </div>
           <div id="get-in-touch" className="app-container-item">
-            <SectionContent>
-              <SectionContentItem>
+            <Content>
+              <Item>
                 <ContactForm />
-              </SectionContentItem>
-            </SectionContent>
+              </Item>
+            </Content>
           </div>
           <Footer />
         </div>
