@@ -18,9 +18,9 @@ export default () => (
         <Title>This is our first Page.</Title>
       </PageContainerItem>
     </PageContainer>
-    <PageContainer>
+    <PageContainer background="orange">
       <PageContainerItem>
-        <Title>This is our first Page.</Title>
+        <Title>This is our second Page.</Title>
       </PageContainerItem>
     </PageContainer>
   </Fragment>
