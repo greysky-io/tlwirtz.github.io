@@ -1,28 +1,27 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
+import PageContainer from '../src/PageContainer';
+import PageContainerItem from '../src/PageContainerItem';
+import HeaderBar from '../src/HeaderBar';
 
 const Title = styled.h1`
-  color: red;
+  color: white;
   font-size: 50px;
-  text-align:center;
-`;
-
-const Container = styled.div`
-  background: orange;
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-`;
-
-const ContainerItem = styled.div`
-  flex: auto;
+  text-align: center;
 `;
 
 export default () => (
-  <Container>
-    <ContainerItem>
-      <Title>Hello World</Title>
-    </ContainerItem>
-  </Container>
+  <Fragment>
+    <HeaderBar />
+    <PageContainer>
+      <PageContainerItem>
+        <Title>This is our first Page.</Title>
+      </PageContainerItem>
+    </PageContainer>
+    <PageContainer>
+      <PageContainerItem>
+        <Title>This is our first Page.</Title>
+      </PageContainerItem>
+    </PageContainer>
+  </Fragment>
 );
