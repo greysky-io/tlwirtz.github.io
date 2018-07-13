@@ -5,4 +5,4 @@ const ContainerItem = styled.div`
   flex: auto;
 `;
 
-export default props => <ContainerItem>{props.children}</ContainerItem>;
+export default ContainerItem;
