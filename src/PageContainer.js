@@ -14,6 +14,7 @@ const Container = styled.div`
   background: ${props => props.background || linearBackground};
   display: flex;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
 `;

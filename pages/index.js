@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import PageContainer from '../src/PageContainer';
 import PageContainerItem from '../src/PageContainerItem';
 import HeaderBar from '../src/HeaderBar';
+import ContactForm from '../src/ContactForm';
+import FlexRow from '../src/FlexRow';
 
 const Title = styled.h1`
   color: white;
@@ -14,14 +16,19 @@ export default () => (
   <Fragment>
     <HeaderBar />
     <PageContainer>
-      <PageContainerItem>
-        <Title>This is our first Page.</Title>
-      </PageContainerItem>
+      <FlexRow>
+        <PageContainerItem>
+          <Title>This is our first Page.</Title>
+          <ContactForm />
+        </PageContainerItem>
+      </FlexRow>
     </PageContainer>
     <PageContainer background="orange">
-      <PageContainerItem>
-        <Title>This is our second Page.</Title>
-      </PageContainerItem>
+      <FlexRow>
+        <PageContainerItem>
+          <Title>This is our second Page.</Title>
+        </PageContainerItem>
+      </FlexRow>
     </PageContainer>
   </Fragment>
 );
