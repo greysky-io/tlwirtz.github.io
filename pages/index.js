@@ -15,9 +15,9 @@ const Title = styled.h1`
 export default () => (
   <Fragment>
     <HeaderBar />
-    <PageContainer>
+    <PageContainer background="rgba(227, 53, 62, 1)">
       <FlexRow>
-        <PageContainerItem>
+        <PageContainerItem >
           <Title>This is our first Page.</Title>
           <ContactForm />
         </PageContainerItem>

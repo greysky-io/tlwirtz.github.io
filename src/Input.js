@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Text = styled.p`
-  color: ${props => props.error ? 'red': 'white'}
-`
+  color: ${props => (props.error ? 'red' : 'white')};
+  display: ${props => props.inline ? 'inline' : 'block'}
+`;
 
 const Input = props => {
   const {
@@ -20,7 +21,7 @@ const Input = props => {
   } = props;
 
   return (
-    <React.Fragment>
+    <div>
       <Text>{displayName}</Text>
       <input
         id={inputId}
@@ -31,8 +32,8 @@ const Input = props => {
         onBlur={e => onBlur(e)}
         className={isInvalid ? 'input-error' : ''}
       />
-      {isInvalid ? <Text error>{invalidMsg}</Text> : null}
-    </React.Fragment>
+      {isInvalid ? <Text error inline>{invalidMsg}</Text> : null}
+    </div>
   );
 };
 
@@ -40,11 +41,7 @@ Input.propTypes = {
   inputId: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.bool,
-    PropTypes.number,
-  ]).isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number]).isRequired,
   onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,
   isInvalid: PropTypes.bool,
@@ -52,4 +49,4 @@ Input.propTypes = {
   displayName: PropTypes.string,
 };
 
-export default Input
+export default Input;

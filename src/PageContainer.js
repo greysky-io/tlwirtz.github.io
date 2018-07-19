@@ -9,8 +9,10 @@ const linearBackground = `linear-gradient(
   rgba(233, 208, 56, 1) 100%
 );`;
 
+const background = 'rgb(227, 53, 62)'
+
 const Container = styled.div`
-  background: rgb(196, 44, 118);
+  background: rgb(227, 53, 62);
   background: ${props => props.background || linearBackground};
   display: flex;
   align-items: center;

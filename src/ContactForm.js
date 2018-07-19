@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import validator from 'validator';
 import Input from './Input';
-import FlexRow from '../src/FlexRow';
+
+const FormSubmit = styled.button`
+  padding: 0.5rem 1.5rem;
+  border: 2px solid white;
+  background: transparent;
+  margin: 1rem 0;
+  color: white;
+  text-transform: uppercase;
+
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+`;
 
 const validate = (value, validatorList) => {
   const isEmail = (value = '') => (validator.isEmail(value) ? [] : ['Proper email is required']);
@@ -98,23 +112,35 @@ class ContactForm extends Component {
 
   render() {
     return (
-      <form>
-        <p>This could use some work</p>
-        <Input
-          displayName="Email"
-          inputId="email"
-          type="text"
-          name="email"
-          value={this.state.inputs.email.value}
-          onChange={this.onChange}
-          onBlur={this.onBlur}
-          isInvalid={this.isInvalid(this.state.inputs.email.errors)}
-          invalidMsg={
-            this.isInvalid(this.state.inputs.email.errors) ? this.state.inputs.email.errors[0] : ''
-          }
-        />
-        <button onClick={e => this.onSubmit(e)}>Submit</button>
-      </form>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          backgroundColor: 'rgba(255, 255, 255, 0.2)',
+          boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
+          padding: '1em',
+          borderRadius: '5px',
+        }}
+      >
+        <form>
+          <Input
+            displayName="Email"
+            inputId="email"
+            type="text"
+            name="email"
+            value={this.state.inputs.email.value}
+            onChange={this.onChange}
+            onBlur={this.onBlur}
+            isInvalid={this.isInvalid(this.state.inputs.email.errors)}
+            invalidMsg={
+              this.isInvalid(this.state.inputs.email.errors)
+                ? this.state.inputs.email.errors[0]
+                : ''
+            }
+          />
+          <FormSubmit onClick={e => this.onSubmit(e)}>Submit</FormSubmit>
+        </form>
+      </div>
     );
   }
 }
