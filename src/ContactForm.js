@@ -6,11 +6,11 @@ import Input from './Input';
 
 const FormSubmit = styled.button`
   padding: 0.5rem 1.5rem;
-  border: 2px solid white;
+  border: 2px solid gray;
   background: transparent;
-  margin: 1rem 0;
-  color: white;
+  color: gray;
   text-transform: uppercase;
+  display: inline;
 
   &:hover {
     opacity: 0.7;
@@ -116,13 +116,15 @@ class ContactForm extends Component {
         style={{
           display: 'flex',
           justifyContent: 'center',
-          backgroundColor: 'rgba(255, 255, 255, 0.2)',
+          // backgroundColor: 'rgba(255, 255, 255, 0.2)',
+          backgroundColor: 'white',
           boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
           padding: '1em',
           borderRadius: '5px',
+          width: '100%'
         }}
       >
-        <form>
+        <form style={{width: '100%', display:'flex'}}>
           <Input
             displayName="Email"
             inputId="email"

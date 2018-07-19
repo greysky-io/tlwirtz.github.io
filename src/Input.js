@@ -3,8 +3,18 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Text = styled.p`
-  color: ${props => (props.error ? 'red' : 'white')};
-  display: ${props => props.inline ? 'inline' : 'block'}
+  color: ${props => (props.error ? 'red' : 'gray')};
+  display: ${props => (props.inline ? 'inline' : 'block')};
+`;
+
+const FormInput = styled.input`
+  width: 100%;
+  height: 3rem;
+  border: 0;
+  color: #333 !important;
+  background-color: white !important;
+  font-size: 1.25rem;
+  outline: none;
 `;
 
 const Input = props => {
@@ -21,9 +31,10 @@ const Input = props => {
   } = props;
 
   return (
-    <div>
-      <Text>{displayName}</Text>
-      <input
+    <div style={{padding: 0, marginRight: '0.5rem', flexGrow: 1}}>
+      <FormInput
+        // placeholder={displayName}
+        placeholder="Enter your email to learn more"
         id={inputId}
         type={type}
         name={name}
@@ -32,7 +43,11 @@ const Input = props => {
         onBlur={e => onBlur(e)}
         className={isInvalid ? 'input-error' : ''}
       />
-      {isInvalid ? <Text error inline>{invalidMsg}</Text> : null}
+      {isInvalid ? (
+        <Text error>
+          {invalidMsg}
+        </Text>
+      ) : null}
     </div>
   );
 };

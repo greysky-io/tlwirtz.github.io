@@ -19,6 +19,11 @@ export default () => (
       <FlexRow>
         <PageContainerItem >
           <Title>This is our first Page.</Title>
+          <p>
+            <a href="https://medium.muz.li/form-design-inspiration-6bb9a350f2d8">
+              Check this out for inspiration
+            </a>
+          </p>
           <ContactForm />
         </PageContainerItem>
       </FlexRow>
