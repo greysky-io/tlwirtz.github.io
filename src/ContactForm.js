@@ -5,17 +5,30 @@ import validator from 'validator';
 import Input from './Input';
 
 const FormSubmit = styled.button`
-  padding: 0.5rem 1.5rem;
-  border: 2px solid gray;
-  background: transparent;
-  color: gray;
-  text-transform: uppercase;
-  display: inline;
-
+  display: flex;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+  background-color: #ae242d;
+  color: white;
+  border: none;
+  border-radius: 5px;
   &:hover {
     opacity: 0.7;
     cursor: pointer;
   }
+`;
+
+const FormContainer = styled.div`
+  justify-content: center;
+  // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+`;
+
+const Form = styled.form`
+  flex: 1;
+  width: 100%;
 `;
 
 const validate = (value, validatorList) => {
@@ -112,19 +125,8 @@ class ContactForm extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          // backgroundColor: 'rgba(255, 255, 255, 0.2)',
-          backgroundColor: 'white',
-          boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
-          padding: '1em',
-          borderRadius: '5px',
-          width: '100%'
-        }}
-      >
-        <form style={{width: '100%', display:'flex'}}>
+      <FormContainer>
+        <Form>
           <Input
             displayName="Email"
             inputId="email"
@@ -141,8 +143,8 @@ class ContactForm extends Component {
             }
           />
           <FormSubmit onClick={e => this.onSubmit(e)}>Submit</FormSubmit>
-        </form>
-      </div>
+        </Form>
+      </FormContainer>
     );
   }
 }

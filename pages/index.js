@@ -15,15 +15,15 @@ const Title = styled.h1`
 export default () => (
   <Fragment>
     <HeaderBar />
-    <PageContainer background="rgba(227, 53, 62, 1)">
+    <PageContainer>
       <FlexRow>
         <PageContainerItem >
           <Title>This is our first Page.</Title>
-          <p>
+          {/* <p>
             <a href="https://medium.muz.li/form-design-inspiration-6bb9a350f2d8">
               Check this out for inspiration
             </a>
-          </p>
+          </p> */}
           <ContactForm />
         </PageContainerItem>
       </FlexRow>

@@ -7,14 +7,25 @@ const Text = styled.p`
   display: ${props => (props.inline ? 'inline' : 'block')};
 `;
 
+const FormInputContainer = styled.div`
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #AE242d;
+  background-color: #6e0a11;
+  flex-grow: 1;
+`;
+
 const FormInput = styled.input`
   width: 100%;
   height: 3rem;
   border: 0;
-  color: #333 !important;
-  background-color: white !important;
+  color: white;
+  background-color: #6e0a11;
   font-size: 1.25rem;
   outline: none;
+  ::placeholder {
+    color: white;
+  }
 `;
 
 const Input = props => {
@@ -31,9 +42,8 @@ const Input = props => {
   } = props;
 
   return (
-    <div style={{padding: 0, marginRight: '0.5rem', flexGrow: 1}}>
+    <FormInputContainer>
       <FormInput
-        // placeholder={displayName}
         placeholder="Enter your email to learn more"
         id={inputId}
         type={type}
@@ -43,12 +53,8 @@ const Input = props => {
         onBlur={e => onBlur(e)}
         className={isInvalid ? 'input-error' : ''}
       />
-      {isInvalid ? (
-        <Text error>
-          {invalidMsg}
-        </Text>
-      ) : null}
-    </div>
+      {isInvalid ? <Text error>{invalidMsg}</Text> : null}
+    </FormInputContainer>
   );
 };
 
