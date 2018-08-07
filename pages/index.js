@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
+import { WHITE } from '../src/constants';
 import PageContainer from '../src/PageContainer';
 import PageContainerItem from '../src/PageContainerItem';
 import HeaderBar from '../src/HeaderBar';
@@ -7,7 +8,7 @@ import ContactForm from '../src/ContactForm';
 import FlexRow from '../src/FlexRow';
 
 const Title = styled.h1`
-  color: white;
+  color: ${WHITE};
   font-size: 50px;
   text-align: center;
 `;
@@ -17,7 +18,7 @@ export default () => (
     <HeaderBar />
     <PageContainer>
       <FlexRow>
-        <PageContainerItem >
+        <PageContainerItem>
           <Title>This is our first Page.</Title>
           {/* <p>
             <a href="https://medium.muz.li/form-design-inspiration-6bb9a350f2d8">

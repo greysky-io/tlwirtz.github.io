@@ -27,8 +27,8 @@ export default class MyDocument extends Document {
           `,
             }}
           />
-
-          <style>{`body { margin: 0 } /* custom! */`}</style>
+          <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet" />
+          <style>{`body { margin: 0; font-family: Raleway, sans-serif; } /* custom! */`}</style>
           {this.props.styleTags}
         </Head>
         <body>

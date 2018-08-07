@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { WHITE, GREY } from './constants';
 
 const Text = styled.p`
+  letter-spacing: 1.25px;
   color: ${props => (props.error ? 'red' : 'gray')};
   display: ${props => (props.inline ? 'inline' : 'block')};
 `;
@@ -10,8 +12,9 @@ const Text = styled.p`
 const FormInputContainer = styled.div`
   padding: 1rem;
   border-radius: 5px;
-  background-color: #AE242d;
-  background-color: #6e0a11;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background-color: ${WHITE};
   flex-grow: 1;
 `;
 
@@ -19,12 +22,12 @@ const FormInput = styled.input`
   width: 100%;
   height: 3rem;
   border: 0;
-  color: white;
-  background-color: #6e0a11;
+  color: ${GREY};
+  background-color: ${WHITE};
   font-size: 1.25rem;
   outline: none;
   ::placeholder {
-    color: white;
+    color: ${GREY};
   }
 `;
 

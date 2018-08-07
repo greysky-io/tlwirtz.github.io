@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import { PURPLE, WHITE } from './constants';
 import validator from 'validator';
 import Input from './Input';
 
 const FormSubmit = styled.button`
   display: flex;
   padding: 1rem;
-  margin-top: 1rem;
   font-size: 1rem;
   width: 100%;
   text-align: center;
-  background-color: #ae242d;
-  color: white;
+  background-color: ${PURPLE};
+  color: ${WHITE};
   border: none;
-  border-radius: 5px;
+  outline: none;
+  border-radius: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   &:hover {
-    opacity: 0.7;
+    opacity: 0.8;
     cursor: pointer;
   }
 `;
 
 const FormContainer = styled.div`
   justify-content: center;
-  // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 `;
 
 const Form = styled.form`

@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { PURPLE, RED, YELLOW } from './constants';
 
 const linearBackground = `linear-gradient(
   30deg,
-  #9B2873 0%,
-  #EE2432 50%,
-  #DDE03A 100%
+  ${PURPLE} 0%,
+  ${RED} 50%,
+  ${YELLOW} 100%
 );`;
 
-const background = '#EE2432'
+const background = RED
 
 const Container = styled.div`
   background: ${props => props.background || linearBackground};
