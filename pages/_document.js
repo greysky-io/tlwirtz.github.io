@@ -14,7 +14,7 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="viewport" content="width=device-width initial-scale=1" />
           <title>Greysky Studios | Premier Web Application Developers</title>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />

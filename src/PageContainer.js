@@ -17,8 +17,14 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+
+  @media only screen and (min-width: 768px) and (min-height: 768px) {
+    height: 100vh; 
+    width: 100vw; 
+  }
 `;
 
 Container.propTypes = { background: PropTypes.string };
