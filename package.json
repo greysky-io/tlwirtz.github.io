@@ -18,6 +18,7 @@
     "deploy-func": "firbase deploy --only functions",
     "dev": "next",
     "build": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "deploy-site": "firebase --project default deploy --only hosting"
   }
 }

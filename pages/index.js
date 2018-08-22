@@ -9,7 +9,7 @@ import FlexRow from '../src/FlexRow';
 
 const SubHeading = styled.h2`
   color: ${WHITE};
-  font-size: 50px;
+  font-size: 3rem;
   text-align: center;
   font-family: Oswald ;
   text-transform: capitalize;

@@ -12,8 +12,9 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <html lang="en">
         <Head>
+          <meta name="viewport" content="width=device-width initial-scale=1" />
           <title>Greysky Studios | Premier Web Application Developers</title>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
@@ -28,7 +29,7 @@ export default class MyDocument extends Document {
             }}
           />
           <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"/>
+          <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
           <style>{`body { margin: 0; font-family: Raleway, sans-serif; } /* custom! */`}</style>
           {this.props.styleTags}
         </Head>
