@@ -14,7 +14,7 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <title>My page</title>
+          <title>Greysky Studios | Premier Web Application Developers</title>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
           <script
@@ -28,6 +28,7 @@ export default class MyDocument extends Document {
             }}
           />
           <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"/>
           <style>{`body { margin: 0; font-family: Raleway, sans-serif; } /* custom! */`}</style>
           {this.props.styleTags}
         </Head>
