@@ -13,7 +13,7 @@ const FormInputContainer = styled.div`
 `;
 
 const FormInput = styled.input`
-  width: 100%;
+  width: 95%;
   height: 3rem;
   border: 0;
   color: ${GREY};
