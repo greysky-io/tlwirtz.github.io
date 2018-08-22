@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import { PURPLE, WHITE } from './constants';
+import { PURPLE, WHITE, GREEN, RED, GREY } from './constants';
 import validator from 'validator';
 import Input from './Input';
 
@@ -11,14 +11,14 @@ const FormSubmit = styled.button`
   font-size: 1rem;
   width: 100%;
   text-align: center;
-  background-color: ${PURPLE};
-  color: ${WHITE};
+  background-color: ${props => props.bgColor};
+  color: ${props => props.textColor};
   border: none;
   outline: none;
   border-radius: 0px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  &:hover {
+  &:hover:enabled {
     opacity: 0.8;
     cursor: pointer;
   }
@@ -53,6 +53,7 @@ class ContactForm extends Component {
         errors: [],
       },
     },
+    submitted: false,
   };
 
   clearInputs = () => {
@@ -64,7 +65,7 @@ class ContactForm extends Component {
 
   validateAll = () => {
     const { inputs } = this.state;
-
+    console.log('validating', inputs);
     Object.keys(inputs).map(key => {
       const field = inputs[key];
       const errors = validate(field.value, field.validators);
@@ -83,15 +84,25 @@ class ContactForm extends Component {
       .reduce((prev, curr) => prev || this.isInvalid(curr), false);
   };
 
+  validateIfBlurred = blurred => {
+    if (blurred) {
+      this.validateAll();
+    }
+  };
+
   onChange = e => {
     const { name, value } = e.target;
     const field = this.state.inputs[name];
-    this.setState({
-      inputs: {
-        ...this.state.inputs,
-        [name]: { ...field, value },
+    this.setState();
+    this.setState(
+      {
+        inputs: {
+          ...this.state.inputs,
+          [name]: { ...field, value },
+        },
       },
-    });
+      () => this.validateIfBlurred(field.blurred)
+    );
   };
 
   onBlur = e => {
@@ -101,7 +112,7 @@ class ContactForm extends Component {
     this.setState({
       inputs: {
         ...this.state.inputs,
-        [name]: { ...field, errors },
+        [name]: { ...field, errors, blurred: true },
       },
     });
   };
@@ -123,30 +134,69 @@ class ContactForm extends Component {
       })
       .then(res => {
         this.clearInputs();
+        this.setState({ submitted: true });
       })
       .catch(err => console.log('err', err));
   };
 
+  getButtonColor = () => {
+    if (this.isInvalid(this.state.inputs.email.errors)) {
+      return RED;
+    }
+
+    if (this.state.submitted) {
+      return GREEN;
+    }
+
+    return PURPLE;
+  };
+
+  getButtonText = () => {
+    if (this.state.submitted) {
+      return 'Thank you! We will be in touch shortly.';
+    }
+
+    if (this.isInvalid(this.state.inputs.email.errors)) {
+      return this.state.inputs.email.errors[0];
+    }
+
+    return 'Submit';
+  };
+
+  getButtonTextColor = () => {
+    if (this.state.submitted) {
+      return GREY;
+    }
+
+    return WHITE;
+  };
+
   render() {
+    const bgColor = this.getButtonColor();
+    const buttonText = this.getButtonText();
+    const buttonTextColor = this.getButtonTextColor();
+    const isDisabled = this.isInvalid(this.state.inputs.email.errors) || this.state.submitted;
+
     return (
       <FormContainer>
         <Form>
-          <Input
-            displayName="Email"
-            inputId="email"
-            type="text"
-            name="email"
-            value={this.state.inputs.email.value}
-            onChange={this.onChange}
-            onBlur={this.onBlur}
-            isInvalid={this.isInvalid(this.state.inputs.email.errors)}
-            invalidMsg={
-              this.isInvalid(this.state.inputs.email.errors)
-                ? this.state.inputs.email.errors[0]
-                : ''
-            }
-          />
-          <FormSubmit onClick={e => this.onSubmit(e)}>Submit</FormSubmit>
+            <Input
+              displayName="Email"
+              inputId="email"
+              type="text"
+              name="email"
+              value={this.state.inputs.email.value}
+              onChange={this.onChange}
+              onBlur={this.onBlur}
+            />
+          <FormSubmit
+            textColor={buttonTextColor}
+            disabled={isDisabled}
+            bgColor={bgColor}
+            onClick={e => this.onSubmit(e)}
+          >
+            {buttonText}
+          </FormSubmit>
         </Form>
       </FormContainer>
     );

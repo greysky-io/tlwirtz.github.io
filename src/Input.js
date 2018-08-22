@@ -3,12 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { WHITE, GREY } from './constants';
 
-const Text = styled.p`
-  letter-spacing: 1.25px;
-  color: ${props => (props.error ? 'red' : 'gray')};
-  display: ${props => (props.inline ? 'inline' : 'block')};
-`;
-
 const FormInputContainer = styled.div`
   padding: 1rem;
   border-radius: 5px;
@@ -56,7 +50,6 @@ const Input = props => {
         onBlur={e => onBlur(e)}
         className={isInvalid ? 'input-error' : ''}
       />
-      {isInvalid ? <Text error>{invalidMsg}</Text> : null}
     </FormInputContainer>
   );
 };
@@ -68,8 +61,6 @@ Input.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number]).isRequired,
   onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,
-  isInvalid: PropTypes.bool,
-  invalidMsg: PropTypes.string,
   displayName: PropTypes.string,
 };
 
