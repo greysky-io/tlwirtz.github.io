@@ -18,9 +18,79 @@ const FormSubmit = styled.button`
   border-radius: 0px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  height: 58px;
   &:hover:enabled {
     opacity: 0.8;
     cursor: pointer;
+  }
+
+  transition: background-color 0.5s;
+  -webkit-transition: background-color 0.5s;
+`;
+
+const SubmitSuccessText = styled.div`
+  animation: fade-in-background 0.5s ease-in-out;
+
+  @keyframes fade-in-background {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+`;
+
+const LoadingContainer = styled.div`
+  margin: 0 auto 0;
+  width: 150px;
+  text-align: center;
+`;
+
+const Bounce = styled.div`
+  width: 13px;
+  height: 13px;
+  background-color: #fff;
+  border-radius: 100%;
+  display: inline-block;
+  margin: 5px;
+
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+
+  &.bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+
+  &.bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+
+  @-webkit-keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+      -webkit-transform: scale(0);
+    }
+    40% {
+      -webkit-transform: scale(1);
+    }
+  }
+
+  @keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    40% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 0.7;
+    }
   }
 `;
 
@@ -54,6 +124,7 @@ class ContactForm extends Component {
       },
     },
     submitted: false,
+    isSubmitting: false,
   };
 
   clearInputs = () => {
@@ -65,7 +136,6 @@ class ContactForm extends Component {
 
   validateAll = () => {
     const { inputs } = this.state;
-    console.log('validating', inputs);
     Object.keys(inputs).map(key => {
       const field = inputs[key];
       const errors = validate(field.value, field.validators);
@@ -123,6 +193,8 @@ class ContactForm extends Component {
     this.validateAll();
     if (this.anyInvalid()) return;
 
+    this.setState({ isSubmitting: true });
+
     const { email } = this.state.inputs;
     const subject = 'New Greysky.io Email Submission';
     const text = `Email: ${email.value}`;
@@ -134,13 +206,16 @@ class ContactForm extends Component {
       })
       .then(res => {
         this.clearInputs();
-        this.setState({ submitted: true });
+        this.setState({ submitted: true, isSubmitting: false });
       })
-      .catch(err => console.log('err', err));
+      .catch(err => {
+        this.setState({ isSubmitting: false });
+        console.log('err', err);
+      });
   };
 
   getButtonColor = () => {
-    if (this.isInvalid(this.state.inputs.email.errors)) {
+    if (this.isInvalid(this.state.inputs.email.errors) && !this.state.submitted) {
       return RED;
     }
 
@@ -180,22 +255,32 @@ class ContactForm extends Component {
     return (
       <FormContainer>
         <Form>
-            <Input
-              displayName="Email"
-              inputId="email"
-              type="text"
-              name="email"
-              value={this.state.inputs.email.value}
-              onChange={this.onChange}
-              onBlur={this.onBlur}
-            />
+          <Input
+            displayName="Email"
+            inputId="email"
+            type="text"
+            name="email"
+            value={this.state.inputs.email.value}
+            onChange={this.onChange}
+            onBlur={this.onBlur}
+          />
           <FormSubmit
             textColor={buttonTextColor}
             disabled={isDisabled}
             bgColor={bgColor}
             onClick={e => this.onSubmit(e)}
           >
-            {buttonText}
+            {this.state.isSubmitting ? (
+              <LoadingContainer>
+                <Bounce className="bounce1" />
+                <Bounce className="bounce2" />
+                <Bounce className="bounce3" />
+              </LoadingContainer>
+            ) : (
+              <SubmitSuccessText className={this.state.submitted ? 'submitted' : undefined}>
+                {buttonText}
+              </SubmitSuccessText>
+            )}
           </FormSubmit>
         </Form>
       </FormContainer>
