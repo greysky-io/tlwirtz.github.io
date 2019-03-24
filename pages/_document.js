@@ -30,7 +30,12 @@ export default class MyDocument extends Document {
           />
           <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet" />
           <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
-          <style>{`body { margin: 0; font-family: Raleway, sans-serif; } /* custom! */`}</style>
+          <style>{`body { 
+              margin: 0; 
+              line-height: 1.5;
+              font-weight: 400;
+              font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+              }`}</style>
           {this.props.styleTags}
         </Head>
         <body>

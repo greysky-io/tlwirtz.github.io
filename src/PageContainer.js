@@ -10,7 +10,7 @@ const linearBackground = `linear-gradient(
   ${YELLOW} 100%
 );`;
 
-const background = RED
+const background = RED;
 
 const Container = styled.div`
   background: ${props => props.background || linearBackground};
@@ -21,9 +21,8 @@ const Container = styled.div`
   padding-left: 1rem;
   padding-bottom: 1rem;
 
-  @media only screen and (min-width: 768px) and (min-height: 768px) {
-    height: 100vh; 
-    width: 100vw; 
+  @media only screen and (min-height: 768px) {
+    height: 100vh;
   }
 `;
 
