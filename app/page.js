@@ -1,3 +1,5 @@
+'use client'; // <--- Add this line
+
 import React, { Fragment } from 'react'; // Fragment might not be needed if you have a single root element
 import styled from 'styled-components';
 import { WHITE } from '../src/constants';
