@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+'use client'; // <--- Add this line at the top
+
+import React, { Component } from 'react'; // Or useState, useEffect if refactored to hooks
 import axios from 'axios';
 import styled from 'styled-components';
 import { PURPLE, WHITE, GREEN, RED, GREY } from './constants';

@@ -1,24 +1,23 @@
 {
   "name": "tlwirtz.github.io",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "private": true,
   "dependencies": {
     "animate.css": "^3.7.0",
     "axios": "^0.18.0",
-    "next": "15.3.1",
+    "next": "latest",
     "prop-types": "^15.7.2",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
+    "react": "latest",
+    "react-dom": "latest",
     "styled-components": "^6.1.17",
     "validator": "^10.11.0"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.0"
   },
   "scripts": {
-    "deploy-func": "firbase deploy --only functions",
-    "dev": "next",
-    "build": "next build && next export",
+    "deploy-func": "firebase deploy --only functions",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "deploy-site": "firebase --project default deploy --only hosting"
   }
