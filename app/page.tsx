@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import {
   ArrowRight,
@@ -18,6 +21,45 @@ import { Button } from "@/components/ui/button"
 import StructuredData from "./components/structured-data"
 
 export default function Home() {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const [submitting, setSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setSubmitting(true)
+    setError(null)
+    setSubmitted(false)
+
+    try {
+      const response = await fetch("https://us-central1-greysky-io.cloudfunctions.net/sendMail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.message || "Something went wrong")
+      }
+
+      // Handle success
+      setSubmitted(true)
+      setName("")
+      setEmail("")
+      setMessage("")
+    } catch (err: any) {
+      setError(err.message || "Failed to send message. Please try again.")
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
   return (
     <div className="flex min-h-screen flex-col bg-white">
       <StructuredData />
@@ -437,7 +479,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="w-full max-w-sm space-y-2">
-                <form className="grid gap-4">
+                <form onSubmit={handleSubmit} className="grid gap-4">
                   <div className="grid gap-2">
                     <label htmlFor="name" className="sr-only">
                       Name
@@ -447,6 +489,9 @@ export default function Home() {
                       placeholder="Name"
                       className="w-full rounded-md border border-gray-300 p-3 text-sm"
                       type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      required
                     />
                   </div>
                   <div className="grid gap-2">
@@ -458,6 +503,9 @@ export default function Home() {
                       placeholder="Email"
                       className="w-full rounded-md border border-gray-300 p-3 text-sm"
                       type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
                     />
                   </div>
                   <div className="grid gap-2">
@@ -469,11 +517,21 @@ export default function Home() {
                       placeholder="Tell us about your project"
                       className="w-full rounded-md border border-gray-300 p-3 text-sm"
                       rows={4}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      required
                     ></textarea>
                   </div>
-                  <Button type="submit" size="lg" className="w-full bg-coral text-white hover:bg-coral/80">
-                    Let's Talk
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full bg-coral text-white hover:bg-coral/80 disabled:opacity-50"
+                    disabled={submitting}
+                  >
+                    {submitting ? "Sending..." : "Let's Talk"}
                   </Button>
+                  {submitted && <p className="text-sm text-teal">Message sent successfully!</p>}
+                  {error && <p className="text-sm text-coral">{error}</p>}
                 </form>
               </div>
             </div>
