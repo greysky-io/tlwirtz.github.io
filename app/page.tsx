@@ -37,16 +37,13 @@ export default function Home() {
         try {
             const subject = 'New Greysky.io Email Submission';
             const text = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
-            const response = await fetch(
-                'https://us-central1-greysky-io.cloudfunctions.net/sendMail',
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ subject, text })
-                }
-            );
+            const response = await fetch('https://sendmailgen2-rbd25iltba-uc.a.run.app', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ subject, text })
+            });
 
             if (!response.ok) {
                 const errorData = await response.json();
@@ -606,8 +603,8 @@ export default function Home() {
                 </section>
             </main>
             <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-coral text-darkgray">
-                <p className="text-xs text-darkgray/80">
-                    © 2024 Greysky Digital. All rights reserved.
+                <p className="text-xs text-darkgray">
+                    © 2025 Greysky Digital. All rights reserved.
                 </p>
                 <nav className="sm:ml-auto flex gap-4 sm:gap-6">
                     <Link

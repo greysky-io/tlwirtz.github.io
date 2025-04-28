@@ -1,6 +1,6 @@
 import React from 'react';
-import StyledComponentsRegistry from '../lib/registry'; // We'll create this next
-import { GA_TRACKING_ID } from '../lib/gtag';
+import StyledComponentsRegistry from '../../lib/registry'; // We'll create this next
+import { GA_TRACKING_ID } from '../../lib/gtag';
 import Script from 'next/script'; // Import Next.js Script component
 
 // Define metadata using the Metadata API

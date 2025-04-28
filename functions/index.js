@@ -1,30 +1,46 @@
-const functions = require('firebase-functions');
-const mailgun = require('mailgun-js');
-const cors = require('cors')({origin: true});
-const api_key = functions.config().mailgun.key;
-const domain = functions.config().mailgun.domain;
-const mg = mailgun({ apiKey: api_key, domain: domain });
+const { onRequest } = require("firebase-functions/v2/https");
+const FormData = require('form-data');
+const cors = require('cors')({ origin: true });
+const { defineString, defineSecret } = require('firebase-functions/params');
+const Mailgun = require('mailgun.js');
 
-exports.sendMail = functions.https.onRequest((request, response) => {
-  cors(request, response, () => {
-    console.log('request', request.body);
-    const { subject, text } = request.body;
-    const to = 'taylorw@greysky.io';
-    const from = 'Greysky Website <taylorw@greysky.io>';
+const api_key = defineSecret('MAILGUN_API_KEY');
+const domain = defineString('MAILGUN_DOMAIN');
 
-    const data = {
-      to,
-      from,
-      subject,
-      text,
-    };
+exports.sendMailGen2 = onRequest(
+  { secrets: [api_key] },
+  (request, response) => {
+    cors(request, response, () => {
 
-    mg.messages().send(data, function(err, body) {
-      if (err) {
-        console.log('err', err);
-        response.status(500).send('There was an error');
-      }
-      response.send(body);
+      const mailgun = new Mailgun(FormData)
+      const mg = mailgun.client({ username: 'api', key: api_key });
+
+
+      console.log('request', request.body);
+      const { subject, text } = request.body;
+      const to = ['Taylor <taylorw@greysky.io>']
+      const from = `Greysky Website <mailgun@${domain}>`;
+
+      const data = {
+        to,
+        from,
+        subject,
+        text,
+      };
+
+      mg.messages.create(domain, data).then((msg) => response.send(msg)
+      ).catch((error) => {
+        console.log('error', error);
+        response.status(500).send({ message: 'There was an error' });
+      });
+
+      //old version
+      // mg.messages().send(data, function (err, body) {
+      //   if (err) {
+      //     console.log('err', err);
+      //     response.status(500).send('There was an error');
+      //   }
+      //   response.send(body);
+      // });
     });
   });
-});
