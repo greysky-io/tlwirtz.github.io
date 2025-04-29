@@ -1,9 +1,14 @@
 import type React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
+
+// It's recommended to store your GA ID in an environment variable
+// const gaId = process.env.NEXT_PUBLIC_GA_ID;
+const gaId = 'G-XXXXXXXXXX'; // Replace with your actual Google Analytics Measurement ID
 
 export const metadata: Metadata = {
     // Basic metadata
@@ -99,7 +104,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
                 <link rel="manifest" href="/site.webmanifest" />
             </head>
-            <body className={inter.className}>{children}</body>
+            <body className={inter.className}>
+                {children}
+                {gaId && <GoogleAnalytics gaId={gaId} />}
+            </body>
         </html>
     );
 }
