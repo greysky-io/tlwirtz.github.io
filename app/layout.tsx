@@ -6,9 +6,7 @@ import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
-// It's recommended to store your GA ID in an environment variable
-// const gaId = process.env.NEXT_PUBLIC_GA_ID;
-const gaId = 'G-XXXXXXXXXX'; // Replace with your actual Google Analytics Measurement ID
+const gaId = 'G-Z1JG5WXPSJ'; // Replace with your actual Google Analytics Measurement ID
 
 export const metadata: Metadata = {
     // Basic metadata
