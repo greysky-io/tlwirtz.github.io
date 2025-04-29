@@ -72,5 +72,8 @@
     "build": "next build",
     "start": "next start",
     "deploy-site": "firebase --project default deploy --only hosting"
+  },
+  "engines": {
+    "node": "22"
   }
 }

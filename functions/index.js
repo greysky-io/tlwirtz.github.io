@@ -13,13 +13,11 @@ exports.sendMailGen2 = onRequest(
     cors(request, response, () => {
 
       const mailgun = new Mailgun(FormData)
-      const mg = mailgun.client({ username: 'api', key: api_key });
+      const mg = mailgun.client({ username: 'api', key: api_key.value().trim() });
 
-
-      console.log('request', request.body);
       const { subject, text } = request.body;
       const to = ['Taylor <taylorw@greysky.io>']
-      const from = `Greysky Website <mailgun@${domain}>`;
+      const from = `Mailgun Sandbox <postmaster@sandbox346d65c03d2741e9bdccb275af95e0d3.mailgun.org>`;
 
       const data = {
         to,
@@ -28,19 +26,11 @@ exports.sendMailGen2 = onRequest(
         text,
       };
 
-      mg.messages.create(domain, data).then((msg) => response.send(msg)
-      ).catch((error) => {
-        console.log('error', error);
-        response.status(500).send({ message: 'There was an error' });
-      });
-
-      //old version
-      // mg.messages().send(data, function (err, body) {
-      //   if (err) {
-      //     console.log('err', err);
-      //     response.status(500).send('There was an error');
-      //   }
-      //   response.send(body);
-      // });
+      mg.messages.create(domain.value(), data)
+        .then((msg) => response.send(msg)
+        ).catch((error) => {
+          console.log('error', error);
+          response.status(500).send({ message: 'There was an error' });
+        });
     });
   });
