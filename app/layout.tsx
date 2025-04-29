@@ -6,7 +6,7 @@ import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const gaId = 'G-Z1JG5WXPSJ'; // Replace with your actual Google Analytics Measurement ID
+const gaId = 'G-Z1JG5WXPSJ';
 
 export const metadata: Metadata = {
     // Basic metadata
