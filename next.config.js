@@ -1,8 +1,9 @@
+
 // next.config.js
 module.exports = {
-  exportPathMap: function(defaultPathMap) {
-    return {
-      '/': { page: '/' },
-    };
+  compiler: {
+    styledComponents: true,
   },
+  // If you need a fully static export later, add:
+  // output: 'export',
 };

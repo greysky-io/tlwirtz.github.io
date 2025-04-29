@@ -1,12 +1,16 @@
-import React, { Fragment } from 'react';
-import styled from 'styled-components';
-import { WHITE } from '../src/constants';
-import PageContainer from '../src/PageContainer';
-import PageContainerItem from '../src/PageContainerItem';
-import HeaderBar from '../src/HeaderBar';
-import ContactForm from '../src/ContactForm';
-import FlexRow from '../src/FlexRow';
+'use client'; // <--- Add this line
 
+import React, { Fragment } from 'react'; // Fragment might not be needed if you have a single root element
+import styled from 'styled-components';
+import { WHITE } from '../../src/constants';
+import PageContainer from '../../src/PageContainer';
+import PageContainerItem from '../../src/PageContainerItem';
+// HeaderBar import was present in the file list but not used in pages/index.js? Keep if needed elsewhere.
+// import HeaderBar from '../src/HeaderBar';
+import ContactForm from '../../src/ContactForm'; // This will be a Client Component
+import FlexRow from '../../src/FlexRow';
+
+// Styled components remain the same
 const SubHeading = styled.h2`
   color: ${WHITE};
   font-size: 3rem;
@@ -40,8 +44,11 @@ const Text = styled.p`
   }
 `;
 
-export default () => (
-  <Fragment>
+// This is now a Server Component by default
+export default function HomePage() {
+  return (
+    // Fragment might not be needed if PageContainer is the single root
+    // <Fragment>
     <PageContainer>
       <FlexRow>
         <PageContainerItem>
@@ -52,9 +59,11 @@ export default () => (
             web and mobile solutions for your business.
           </Text>
           <SubHeading>Send us a message to start your transformation.</SubHeading>
+          {/* ContactForm uses hooks/state, so it must be a Client Component */}
           <ContactForm />
         </PageContainerItem>
       </FlexRow>
     </PageContainer>
-  </Fragment>
-);
+    // </Fragment>
+  );
+}
